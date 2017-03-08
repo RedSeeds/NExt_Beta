@@ -7,14 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480955AD1E6E89FB009F4D1A /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480955AC1E6E89FB009F4D1A /* PopAnimator.swift */; };
+		4829297B1E664ADF0086529A /* NextItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829297A1E664ADF0086529A /* NextItemsCollectionView.swift */; };
+		4829297D1E664E020086529A /* UpNextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829297C1E664E020086529A /* UpNextCell.swift */; };
+		48294BE81E5C13F0001F0AE9 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */; };
+		4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854562E1E6BC99B003D6B58 /* StatView.swift */; };
+		485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */; };
+		485456341E6BCE0C003D6B58 /* SizingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456321E6BCE0C003D6B58 /* SizingLabel.swift */; };
+		485456361E6BD06E003D6B58 /* ProgressRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456351E6BD06E003D6B58 /* ProgressRingViewController.swift */; };
+		488690741E5D62440074712F /* four_starts.png in Resources */ = {isa = PBXBuildFile; fileRef = 488690731E5D62440074712F /* four_starts.png */; };
+		488690761E5D6D1F0074712F /* Shack color.png in Resources */ = {isa = PBXBuildFile; fileRef = 488690751E5D6D1F0074712F /* Shack color.png */; };
 		4890119C1E5A27B300734682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890119B1E5A27B300734682 /* AppDelegate.swift */; };
-		4890119E1E5A27B300734682 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890119D1E5A27B300734682 /* ViewController.swift */; };
 		489011A11E5A27B300734682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4890119F1E5A27B300734682 /* Main.storyboard */; };
 		489011A41E5A27B300734682 /* NExt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 489011A21E5A27B300734682 /* NExt.xcdatamodeld */; };
 		489011A61E5A27B300734682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 489011A51E5A27B300734682 /* Assets.xcassets */; };
-		489011A91E5A27B300734682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489011A71E5A27B300734682 /* LaunchScreen.storyboard */; };
 		489011B41E5A27B300734682 /* NExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011B31E5A27B300734682 /* NExtTests.swift */; };
 		489011BF1E5A27B300734682 /* NExtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011BE1E5A27B300734682 /* NExtUITests.swift */; };
+		489011D01E5A28B700734682 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011CF1E5A28B700734682 /* ChecklistViewController.swift */; };
+		489011D31E5A2A2300734682 /* ChecklistItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D21E5A2A2300734682 /* ChecklistItemCell.swift */; };
+		489011D51E5A2D3200734682 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D41E5A2D3200734682 /* ChecklistItem.swift */; };
+		489011D81E5A317700734682 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D71E5A317700734682 /* ItemDetailViewController.swift */; };
+		489011DA1E5A5B5900734682 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D91E5A5B5900734682 /* AllListsViewController.swift */; };
+		489011DC1E5A615200734682 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011DB1E5A615200734682 /* Checklist.swift */; };
+		489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011DD1E5A806700734682 /* ListDetailViewController.swift */; };
+		489011E11E5A889B00734682 /* IOS camera icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 489011E01E5A889B00734682 /* IOS camera icon.png */; };
+		48AEA8531E63E4B600823B4B /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AEA8521E63E4B600823B4B /* TopTableViewCell.swift */; };
+		48B043771E5E5FF400AD4F46 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B043761E5E5FF400AD4F46 /* ListCell.swift */; };
+		48B043791E5EAE9500AD4F46 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */; };
+		48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437A1E5EB7A900AD4F46 /* Star 22.png */; };
+		48B0437D1E5EB7B100AD4F46 /* Star large.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437C1E5EB7B100AD4F46 /* Star large.png */; };
+		48D793841E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D793831E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift */; };
+		48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA3C41E5B928500F470D7 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +58,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		480955AC1E6E89FB009F4D1A /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		4829297A1E664ADF0086529A /* NextItemsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextItemsCollectionView.swift; sourceTree = "<group>"; };
+		4829297C1E664E020086529A /* UpNextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpNextCell.swift; sourceTree = "<group>"; };
+		48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
+		4854562E1E6BC99B003D6B58 /* StatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreesToRadians.swift; sourceTree = "<group>"; };
+		485456321E6BCE0C003D6B58 /* SizingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingLabel.swift; sourceTree = "<group>"; };
+		485456351E6BD06E003D6B58 /* ProgressRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRingViewController.swift; sourceTree = "<group>"; };
+		488690731E5D62440074712F /* four_starts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_starts.png; sourceTree = "<group>"; };
+		488690751E5D6D1F0074712F /* Shack color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shack color.png"; sourceTree = "<group>"; };
 		489011981E5A27B300734682 /* NExt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NExt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4890119B1E5A27B300734682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4890119D1E5A27B300734682 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		489011A01E5A27B300734682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		489011A31E5A27B300734682 /* NExt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NExt.xcdatamodel; sourceTree = "<group>"; };
 		489011A51E5A27B300734682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		489011A81E5A27B300734682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		489011AA1E5A27B300734682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		489011AF1E5A27B300734682 /* NExtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NExtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		489011B31E5A27B300734682 /* NExtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NExtTests.swift; sourceTree = "<group>"; };
@@ -49,6 +80,21 @@
 		489011BA1E5A27B300734682 /* NExtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NExtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		489011BE1E5A27B300734682 /* NExtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NExtUITests.swift; sourceTree = "<group>"; };
 		489011C01E5A27B300734682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		489011CF1E5A28B700734682 /* ChecklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
+		489011D21E5A2A2300734682 /* ChecklistItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItemCell.swift; sourceTree = "<group>"; };
+		489011D41E5A2D3200734682 /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		489011D71E5A317700734682 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		489011D91E5A5B5900734682 /* AllListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
+		489011DB1E5A615200734682 /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		489011DD1E5A806700734682 /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
+		489011E01E5A889B00734682 /* IOS camera icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS camera icon.png"; sourceTree = "<group>"; };
+		48AEA8521E63E4B600823B4B /* TopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
+		48B043761E5E5FF400AD4F46 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
+		48B0437A1E5EB7A900AD4F46 /* Star 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star 22.png"; sourceTree = "<group>"; };
+		48B0437C1E5EB7B100AD4F46 /* Star large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star large.png"; sourceTree = "<group>"; };
+		48D793831E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		48DCA3C41E5B928500F470D7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +122,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		485456301E6BCDFE003D6B58 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */,
+				485456321E6BCE0C003D6B58 /* SizingLabel.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		4890118F1E5A27B300734682 = {
 			isa = PBXGroup;
 			children = (
 				4890119A1E5A27B300734682 /* NExt */,
+				489011DF1E5A880600734682 /* Images */,
 				489011B21E5A27B300734682 /* NExtTests */,
 				489011BD1E5A27B300734682 /* NExtUITests */,
 				489011991E5A27B300734682 /* Products */,
@@ -99,11 +155,13 @@
 		4890119A1E5A27B300734682 /* NExt */ = {
 			isa = PBXGroup;
 			children = (
+				485456301E6BCDFE003D6B58 /* Helpers */,
 				4890119B1E5A27B300734682 /* AppDelegate.swift */,
-				4890119D1E5A27B300734682 /* ViewController.swift */,
 				4890119F1E5A27B300734682 /* Main.storyboard */,
+				489011D61E5A2E9E00734682 /* Model */,
+				489011CC1E5A282300734682 /* Controllers */,
+				489011D11E5A2A0100734682 /* Views */,
 				489011A51E5A27B300734682 /* Assets.xcassets */,
-				489011A71E5A27B300734682 /* LaunchScreen.storyboard */,
 				489011AA1E5A27B300734682 /* Info.plist */,
 				489011A21E5A27B300734682 /* NExt.xcdatamodeld */,
 			);
@@ -126,6 +184,58 @@
 				489011C01E5A27B300734682 /* Info.plist */,
 			);
 			path = NExtUITests;
+			sourceTree = "<group>";
+		};
+		489011CC1E5A282300734682 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4829297A1E664ADF0086529A /* NextItemsCollectionView.swift */,
+				489011CF1E5A28B700734682 /* ChecklistViewController.swift */,
+				489011D71E5A317700734682 /* ItemDetailViewController.swift */,
+				489011D91E5A5B5900734682 /* AllListsViewController.swift */,
+				489011DD1E5A806700734682 /* ListDetailViewController.swift */,
+				48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */,
+				48D793831E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift */,
+				485456351E6BD06E003D6B58 /* ProgressRingViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		489011D11E5A2A0100734682 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4854562E1E6BC99B003D6B58 /* StatView.swift */,
+				489011D21E5A2A2300734682 /* ChecklistItemCell.swift */,
+				48B043761E5E5FF400AD4F46 /* ListCell.swift */,
+				48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */,
+				48AEA8521E63E4B600823B4B /* TopTableViewCell.swift */,
+				4829297C1E664E020086529A /* UpNextCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		489011D61E5A2E9E00734682 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				480955AC1E6E89FB009F4D1A /* PopAnimator.swift */,
+				489011D41E5A2D3200734682 /* ChecklistItem.swift */,
+				489011DB1E5A615200734682 /* Checklist.swift */,
+				48DCA3C41E5B928500F470D7 /* DataModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		489011DF1E5A880600734682 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				48B0437C1E5EB7B100AD4F46 /* Star large.png */,
+				48B0437A1E5EB7A900AD4F46 /* Star 22.png */,
+				488690751E5D6D1F0074712F /* Shack color.png */,
+				488690731E5D62440074712F /* four_starts.png */,
+				489011E01E5A889B00734682 /* IOS camera icon.png */,
+			);
+			name = Images;
+			path = NExt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,9 +348,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				489011A91E5A27B300734682 /* LaunchScreen.storyboard in Resources */,
 				489011A61E5A27B300734682 /* Assets.xcassets in Resources */,
 				489011A11E5A27B300734682 /* Main.storyboard in Resources */,
+				488690761E5D6D1F0074712F /* Shack color.png in Resources */,
+				48B0437D1E5EB7B100AD4F46 /* Star large.png in Resources */,
+				489011E11E5A889B00734682 /* IOS camera icon.png in Resources */,
+				48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */,
+				488690741E5D62440074712F /* four_starts.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +379,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4890119E1E5A27B300734682 /* ViewController.swift in Sources */,
+				4829297B1E664ADF0086529A /* NextItemsCollectionView.swift in Sources */,
 				4890119C1E5A27B300734682 /* AppDelegate.swift in Sources */,
+				489011DA1E5A5B5900734682 /* AllListsViewController.swift in Sources */,
+				485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */,
+				48D793841E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift in Sources */,
+				489011D51E5A2D3200734682 /* ChecklistItem.swift in Sources */,
+				489011D01E5A28B700734682 /* ChecklistViewController.swift in Sources */,
+				489011DC1E5A615200734682 /* Checklist.swift in Sources */,
+				485456341E6BCE0C003D6B58 /* SizingLabel.swift in Sources */,
+				48294BE81E5C13F0001F0AE9 /* IconPickerViewController.swift in Sources */,
+				485456361E6BD06E003D6B58 /* ProgressRingViewController.swift in Sources */,
+				48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */,
 				489011A41E5A27B300734682 /* NExt.xcdatamodeld in Sources */,
+				489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */,
+				480955AD1E6E89FB009F4D1A /* PopAnimator.swift in Sources */,
+				48B043771E5E5FF400AD4F46 /* ListCell.swift in Sources */,
+				4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */,
+				4829297D1E664E020086529A /* UpNextCell.swift in Sources */,
+				48AEA8531E63E4B600823B4B /* TopTableViewCell.swift in Sources */,
+				48B043791E5EAE9500AD4F46 /* ListHeaderView.swift in Sources */,
+				489011D31E5A2A2300734682 /* ChecklistItemCell.swift in Sources */,
+				489011D81E5A317700734682 /* ItemDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,14 +442,6 @@
 				489011A01E5A27B300734682 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		489011A71E5A27B300734682 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				489011A81E5A27B300734682 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -518,6 +643,7 @@
 				489011C51E5A27B300734682 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		489011C61E5A27B300734682 /* Build configuration list for PBXNativeTarget "NExtTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +652,7 @@
 				489011C81E5A27B300734682 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		489011C91E5A27B300734682 /* Build configuration list for PBXNativeTarget "NExtUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +661,7 @@
 				489011CB1E5A27B300734682 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
