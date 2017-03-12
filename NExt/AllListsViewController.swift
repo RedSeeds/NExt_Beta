@@ -19,14 +19,12 @@ class AllListsViewController: UITableViewController {
     // Variables
     let transition = PopAnimator()
     var progressPercentage: CGFloat = 0
-    let sceneHeight: CGFloat = 8
-    var dataModel: DataModel!
+   var dataModel: DataModel!
     var categoryImage = ""
     var allItems: [ChecklistItem] = []
-    var isRefreshing = false
-    var redLineShowing = false
+       var redLineShowing = false
     var nextItemDue: ChecklistItem?
-    var popUpVissible = false
+   
     // Outlets
     @IBOutlet var headerView: UIView!
     @IBOutlet weak var headerLabel: UILabel!
@@ -56,7 +54,8 @@ class AllListsViewController: UITableViewController {
         
    
     }
-    
+   
+
     
     // MARK:-Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,7 +85,7 @@ class AllListsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+    /*
         
     redLineWidthConstraint.constant = 0
         redLine.backgroundColor = UIColor.clear
@@ -95,11 +94,12 @@ class AllListsViewController: UITableViewController {
         let collViewLayout = UICollectionViewFlowLayout()
         let layout = collViewLayout 
         layout.itemSize = CGSize(width: width, height: width)
-        
+        */
         // TableView set to possition the upper CollectionView View off the window and under the Navbar to appear hidden util scrolled down
-   tableView.contentInset.top = -upNextView.frame.height
+  // tableView.contentInset.top = -upNextView.frame.height
   
-       tableView.rowHeight = 107
+       tableView.rowHeight = 120
+        
         
         /* // Uncomment to limit Checklists to 3 as a free app
         if dataModel.lists.count > 2 {
@@ -212,11 +212,12 @@ class AllListsViewController: UITableViewController {
                     
                     configureBadge(cell: cell, view: cell.badgeView)
                       cell.badgeLabel.text = String(checklist.overDueItems())
+            
                 }
                     cell.badgeView.backgroundColor = UIColor.red
                 
+                cell.text2.text = "\(checklist.countUncheckedItems()) Remaining"
                 
-                    
                 
                     
         
@@ -224,12 +225,14 @@ class AllListsViewController: UITableViewController {
                 
             }
         
+      cell.badgeViewYContraint.constant = -cell.statView.frame.height / 2 + cell.badgeView.frame.height / 2
+        cell.badgeViewXConstraint.constant = -cell.statView.frame.height / 2 + cell.badgeView.frame.height / 2
         
-    
+            
             cell.itemImageView?.image = UIImage(named: checklist.iconName)
             cell.itemImageView?.layer.borderColor = UIColor.white.cgColor
             cell.itemImageView?.layer.borderWidth = 0.5
-            cell.itemImageView?.layer.cornerRadius = 3
+            cell.itemImageView?.layer.cornerRadius = cell.statView.frame.width / 2
         
             cell.statView.range = CGFloat(checklist.items.count)
         cell.statView.curValue = CGFloat(checklist.countcheckedItems())
@@ -282,7 +285,7 @@ class AllListsViewController: UITableViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
         dataModel.nextDueItem()
-  collectionView.reloadData()
+ // collectionView.reloadData()
     
       
     }
@@ -295,7 +298,7 @@ class AllListsViewController: UITableViewController {
             let checklist = dataModel.lists[index]
             performSegue(withIdentifier: "ShowChecklist", sender: checklist)
         }
-    
+    /*
         if redLineShowing {
    
     UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
@@ -311,13 +314,14 @@ UIView.animate(withDuration: 0.5, delay: 1.0, usingSpringWithDamping: 0.6, initi
     self.headerView.layoutIfNeeded()
     
 }, completion: nil)
+ 
     }
-      
+      */
     }
     
    
 }
-
+/*
 extension AllListsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -394,6 +398,8 @@ extension AllListsViewController: UICollectionViewDataSource, UICollectionViewDe
         return CGSize(width: self.view.frame.size.width, height: upNextView.frame.height)
     }
 }
+*/
+
 
 extension NSDate {
     func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
@@ -463,7 +469,7 @@ extension AllListsViewController:ListDetailViewControllerDelegate {
         dataModel.lists.append(checklist)
         dataModel.sortChecklists()
         tableView.reloadData()
-        collectionView.reloadData()
+        //collectionView.reloadData()
         dismiss(animated: true, completion: nil)
     }
     
@@ -471,7 +477,7 @@ extension AllListsViewController:ListDetailViewControllerDelegate {
                                   didFinishEditing checklist: Checklist) {
         dataModel.sortChecklists()
         tableView.reloadData()
-        collectionView.reloadData()
+       // collectionView.reloadData()
         dismiss(animated: true, completion: nil)
     }
 
@@ -488,7 +494,7 @@ extension AllListsViewController: UINavigationControllerDelegate {
     }
 }
 
-
+/*
 
 extension AllListsViewController: UIPopoverPresentationControllerDelegate {
     
@@ -569,4 +575,4 @@ extension AllListsViewController: UIPopoverPresentationControllerDelegate {
 }
 
 
-
+*/

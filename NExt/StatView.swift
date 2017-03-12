@@ -65,37 +65,37 @@ class StatView: UIView {
     func setup() {
         
         // Setup background layer
-        bgLayer.lineWidth = 2.0
+        bgLayer.lineWidth = 8.0
         bgLayer.fillColor = nil
         bgLayer.strokeEnd = 1
         layer.addSublayer(bgLayer)
-        fgLayer.lineWidth = 2.0
+        fgLayer.lineWidth = 8.0
         fgLayer.fillColor = nil
         fgLayer.strokeEnd = 0
         layer.addSublayer(fgLayer)
         
         // Setup percent label
-        percentLabel.font = UIFont.systemFont(ofSize: 15)
-        percentLabel.textColor = UIColor.lightGray
+        percentLabel.font = UIFont.systemFont(ofSize: 17)
+        percentLabel.textColor = UIColor.clear
         percentLabel.text = "0/0"
         percentLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(percentLabel)
         
         // Setup caption label
         captionLabel.font = UIFont.systemFont(ofSize: 12)
-        captionLabel.text = ""
+        captionLabel.text = "Catagory"
         captionLabel.textColor = UIColor.lightGray
         captionLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(captionLabel)
+        //addSubview(captionLabel)
         
         // Setup constraints
         let percentLabelCenterX = percentLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        let percentLabelCenterY = percentLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -margin)
+        let percentLabelCenterY = percentLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         NSLayoutConstraint.activate([percentLabelCenterX, percentLabelCenterY])
         
-        let captionLabelCenterX = captionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -margin)
-        let captionLabelBottom = captionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -margin)
-        NSLayoutConstraint.activate([captionLabelCenterX, captionLabelBottom])
+       // let captionLabelCenterX = captionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+       // let captionLabelBottom = captionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+       // NSLayoutConstraint.activate([captionLabelCenterX, captionLabelBottom])
     }
     
     func configure() {
@@ -114,7 +114,7 @@ class StatView: UIView {
         let startAngle = DegreesToRadians(135.0)
         let endAngle = DegreesToRadians(45.0)
         let center = percentLabel.center
-        let radius = self.bounds.width * 0.35
+        let radius = self.bounds.width * 0.50
         let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
      
         shapeLayer.path = path.cgPath

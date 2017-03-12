@@ -11,10 +11,10 @@
 		4829297B1E664ADF0086529A /* NextItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829297A1E664ADF0086529A /* NextItemsCollectionView.swift */; };
 		4829297D1E664E020086529A /* UpNextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829297C1E664E020086529A /* UpNextCell.swift */; };
 		48294BE81E5C13F0001F0AE9 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */; };
+		482FBA251E7514AB003267D3 /* Empy smilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 482FBA241E7514AB003267D3 /* Empy smilly.png */; };
 		4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854562E1E6BC99B003D6B58 /* StatView.swift */; };
 		485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */; };
 		485456341E6BCE0C003D6B58 /* SizingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456321E6BCE0C003D6B58 /* SizingLabel.swift */; };
-		485456361E6BD06E003D6B58 /* ProgressRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456351E6BD06E003D6B58 /* ProgressRingViewController.swift */; };
 		488690741E5D62440074712F /* four_starts.png in Resources */ = {isa = PBXBuildFile; fileRef = 488690731E5D62440074712F /* four_starts.png */; };
 		488690761E5D6D1F0074712F /* Shack color.png in Resources */ = {isa = PBXBuildFile; fileRef = 488690751E5D6D1F0074712F /* Shack color.png */; };
 		4890119C1E5A27B300734682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890119B1E5A27B300734682 /* AppDelegate.swift */; };
@@ -36,7 +36,8 @@
 		48B043791E5EAE9500AD4F46 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */; };
 		48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437A1E5EB7A900AD4F46 /* Star 22.png */; };
 		48B0437D1E5EB7B100AD4F46 /* Star large.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437C1E5EB7B100AD4F46 /* Star large.png */; };
-		48D793841E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D793831E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift */; };
+		48CB0B4D1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4C1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift */; };
+		48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4E1E712E1500965C26 /* IconCell.swift */; };
 		48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA3C41E5B928500F470D7 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,10 +63,10 @@
 		4829297A1E664ADF0086529A /* NextItemsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextItemsCollectionView.swift; sourceTree = "<group>"; };
 		4829297C1E664E020086529A /* UpNextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpNextCell.swift; sourceTree = "<group>"; };
 		48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
+		482FBA241E7514AB003267D3 /* Empy smilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empy smilly.png"; sourceTree = "<group>"; };
 		4854562E1E6BC99B003D6B58 /* StatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreesToRadians.swift; sourceTree = "<group>"; };
 		485456321E6BCE0C003D6B58 /* SizingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingLabel.swift; sourceTree = "<group>"; };
-		485456351E6BD06E003D6B58 /* ProgressRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRingViewController.swift; sourceTree = "<group>"; };
 		488690731E5D62440074712F /* four_starts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_starts.png; sourceTree = "<group>"; };
 		488690751E5D6D1F0074712F /* Shack color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shack color.png"; sourceTree = "<group>"; };
 		489011981E5A27B300734682 /* NExt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NExt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +94,8 @@
 		48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 		48B0437A1E5EB7A900AD4F46 /* Star 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star 22.png"; sourceTree = "<group>"; };
 		48B0437C1E5EB7B100AD4F46 /* Star large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star large.png"; sourceTree = "<group>"; };
-		48D793831E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		48CB0B4C1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureVIewControllerViewController.swift; sourceTree = "<group>"; };
+		48CB0B4E1E712E1500965C26 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		48DCA3C41E5B928500F470D7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,8 +197,7 @@
 				489011D91E5A5B5900734682 /* AllListsViewController.swift */,
 				489011DD1E5A806700734682 /* ListDetailViewController.swift */,
 				48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */,
-				48D793831E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift */,
-				485456351E6BD06E003D6B58 /* ProgressRingViewController.swift */,
+				48CB0B4C1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +211,7 @@
 				48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */,
 				48AEA8521E63E4B600823B4B /* TopTableViewCell.swift */,
 				4829297C1E664E020086529A /* UpNextCell.swift */,
+				48CB0B4E1E712E1500965C26 /* IconCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -228,6 +230,7 @@
 		489011DF1E5A880600734682 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				482FBA241E7514AB003267D3 /* Empy smilly.png */,
 				48B0437C1E5EB7B100AD4F46 /* Star large.png */,
 				48B0437A1E5EB7A900AD4F46 /* Star 22.png */,
 				488690751E5D6D1F0074712F /* Shack color.png */,
@@ -355,6 +358,7 @@
 				489011E11E5A889B00734682 /* IOS camera icon.png in Resources */,
 				48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */,
 				488690741E5D62440074712F /* four_starts.png in Resources */,
+				482FBA251E7514AB003267D3 /* Empy smilly.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,18 +387,18 @@
 				4890119C1E5A27B300734682 /* AppDelegate.swift in Sources */,
 				489011DA1E5A5B5900734682 /* AllListsViewController.swift in Sources */,
 				485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */,
-				48D793841E62B13100AFB436 /* PullToRefreshViewControllerTableViewController.swift in Sources */,
+				48CB0B4D1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift in Sources */,
 				489011D51E5A2D3200734682 /* ChecklistItem.swift in Sources */,
 				489011D01E5A28B700734682 /* ChecklistViewController.swift in Sources */,
 				489011DC1E5A615200734682 /* Checklist.swift in Sources */,
 				485456341E6BCE0C003D6B58 /* SizingLabel.swift in Sources */,
 				48294BE81E5C13F0001F0AE9 /* IconPickerViewController.swift in Sources */,
-				485456361E6BD06E003D6B58 /* ProgressRingViewController.swift in Sources */,
 				48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */,
 				489011A41E5A27B300734682 /* NExt.xcdatamodeld in Sources */,
 				489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */,
 				480955AD1E6E89FB009F4D1A /* PopAnimator.swift in Sources */,
 				48B043771E5E5FF400AD4F46 /* ListCell.swift in Sources */,
+				48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */,
 				4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */,
 				4829297D1E664E020086529A /* UpNextCell.swift in Sources */,
 				48AEA8531E63E4B600823B4B /* TopTableViewCell.swift in Sources */,
@@ -546,8 +550,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 25449H8S9A;
 				INFOPLIST_FILE = NExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RED.NExt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.redseedapps.NExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -559,8 +564,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 25449H8S9A;
 				INFOPLIST_FILE = NExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RED.NExt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.redseedapps.NExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

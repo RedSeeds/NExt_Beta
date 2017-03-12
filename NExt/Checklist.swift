@@ -14,6 +14,7 @@ class Checklist: NSObject, NSCoding {
     var name = ""
     var items = [ChecklistItem]()
     var iconName: String
+   // var photo = UIImage()
     
     convenience init(name: String) {
         self.init(name: name, iconName: "No Icon")
@@ -29,6 +30,7 @@ class Checklist: NSObject, NSCoding {
         name = aDecoder.decodeObject(forKey: "Name") as! String
         items = aDecoder.decodeObject(forKey: "Items") as! [ChecklistItem]
         iconName = aDecoder.decodeObject(forKey: "IconName") as! String
+      //  photo = aDecoder.decodeObject(forKey: "Photo") as! UIImage
         super.init()
     }
     
@@ -36,6 +38,7 @@ class Checklist: NSObject, NSCoding {
         aCoder.encode(name, forKey: "Name")
         aCoder.encode(items, forKey: "Items")
         aCoder.encode(iconName, forKey: "IconName")
+      //  aCoder.encode(photo, forKey: "Photo")
     }
     
     // Class methods 

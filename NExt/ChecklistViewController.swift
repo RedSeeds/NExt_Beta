@@ -183,7 +183,7 @@ extension ChecklistViewController {
    
     func configureCheckmark(for cell: UITableViewCell,
                             with item: ChecklistItem) {
-        let checkedImage = cell.viewWithTag(1) as! UIImageView
+        //let checkedImage = cell.viewWithTag(1) as! UIImageView
         
        
        
@@ -193,10 +193,10 @@ extension ChecklistViewController {
 
             if item.checked {
              checkMarkLabel.isHidden = false
-                checkedImage.isHidden = false
+                //checkedImage.isHidden = false
             } else {
               checkMarkLabel.isHidden = true
-                checkedImage.isHidden = true
+                //checkedImage.isHidden = true
             }
 
             

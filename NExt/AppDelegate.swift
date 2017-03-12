@@ -25,7 +25,8 @@ let dataModel = DataModel()
         
         
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = UIColor(red: 51, green: 51, blue: 51, alpha: 1.0)
+        navigationBarAppearace.tintColor = UIColor.lightGray
+        //navigationBarAppearace.tintColor = UIColor(red: 51, green: 51, blue: 51, alpha: 1.0)
         
       
        navigationBarAppearace.barTintColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0)

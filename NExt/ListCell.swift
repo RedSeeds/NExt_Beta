@@ -30,6 +30,12 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var badgeViewLeadingContraint: NSLayoutConstraint!
     
+     // Used to possition the badgeView to the top right corner of the Stat view
+    
+    @IBOutlet weak var badgeViewYContraint: NSLayoutConstraint!
+    @IBOutlet weak var badgeViewXConstraint: NSLayoutConstraint!
+    
+    
     // Actions
     @IBAction func buttonTap(sender: AnyObject) {
         // Something should happen here
