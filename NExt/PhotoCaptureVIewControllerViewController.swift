@@ -50,6 +50,13 @@ class PhotoCaptureVIewControllerViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        
+      
+
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -150,11 +157,9 @@ extension PhotoCaptureVIewControllerViewController: UIImagePickerControllerDeleg
  */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        
-     
-        
-        
-        
+    
+            
+
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             picker.allowsEditing = true
             if cameraSelected {

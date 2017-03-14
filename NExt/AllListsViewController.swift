@@ -172,13 +172,8 @@ class AllListsViewController: UITableViewController {
             
             cell.badgeView.transform = CGAffineTransform(scaleX: 1, y: 1)
             
-            
         }, completion: nil)
-        
     }
-    
-
-    
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -228,8 +223,20 @@ class AllListsViewController: UITableViewController {
       cell.badgeViewYContraint.constant = -cell.statView.frame.height / 2 + cell.badgeView.frame.height / 2
         cell.badgeViewXConstraint.constant = -cell.statView.frame.height / 2 + cell.badgeView.frame.height / 2
         
+        if checklist.iconName == "" && checklist.photo != nil {
             
-            cell.itemImageView?.image = UIImage(named: checklist.iconName)
+            cell.itemImageView?.image = checklist.photo
+            
+        }else if checklist.iconName == "" && checklist.pictureTaken != nil{
+            
+            
+            cell.itemImageView?.image = checklist.pictureTaken
+        }else{
+           cell.itemImageView?.image = UIImage(named: checklist.iconName)
+        }
+        
+        
+        
             cell.itemImageView?.layer.borderColor = UIColor.white.cgColor
             cell.itemImageView?.layer.borderWidth = 0.5
             cell.itemImageView?.layer.cornerRadius = cell.statView.frame.width / 2
@@ -459,6 +466,11 @@ extension NSDate {
 }
 
 extension AllListsViewController:ListDetailViewControllerDelegate {
+    func listDetailViewController(_controller: ListDetailViewController, didFinishAddingPhoto: UIImage) {
+        
+        
+    }
+
     func listDetailViewControllerDidCancel(
         _ controller: ListDetailViewController) {
         dismiss(animated: true, completion: nil)

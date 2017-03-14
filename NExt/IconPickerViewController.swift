@@ -21,7 +21,7 @@ class IconPickerViewController: UICollectionViewController {
     weak var delegate: IconPickerViewControllerDelegate?
     
     let icons = [
-        "No Icon",
+        "Empty-Smilly",
         "Home",
         "Appointments",
         "Birthdays",
@@ -63,19 +63,14 @@ class IconPickerViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as? IconCell
-        
-       
         if indexPath.row == 0 {
-            cell?.iconLabel.textColor = UIColor.black
-            cell?.iconLabel.text = "Customize"
+            cell?.iconImageView.backgroundColor = UIColor.clear
         }
         let iconName = icons[indexPath.row]
         cell?.iconImageView.image = UIImage(named: iconName)
-        if iconName == "No Icon" {
-            cell?.iconLabel.text = "Customize"
-            cell?.iconLabel.textColor = UIColor.darkGray
-        }
-      
+        
+        // Label is pressent but hidden until needed
+      cell?.iconLabel.isHidden = true
         
         return cell!
         
@@ -84,19 +79,8 @@ class IconPickerViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if indexPath.row == 0 {
-            
-            performSegue(withIdentifier: "pickPhoto", sender: nil)
-        }else{
-            
-            if let delegate = delegate {
-                let iconName = icons[indexPath.row]
-                delegate.iconPicker(self, didPick: iconName)
-                print("selected")
-            }
-            
-        }
-        
+       let iconName = icons[indexPath.row]
+        delegate?.iconPicker(self, didPick: iconName)
 
     }
     
