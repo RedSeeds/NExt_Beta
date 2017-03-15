@@ -12,6 +12,7 @@
 		4829297D1E664E020086529A /* UpNextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829297C1E664E020086529A /* UpNextCell.swift */; };
 		48294BE81E5C13F0001F0AE9 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */; };
 		482FBA251E7514AB003267D3 /* Empy smilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 482FBA241E7514AB003267D3 /* Empy smilly.png */; };
+		483BD20F1E78F4AA00A05A85 /* AddToCodeSnipit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483BD20E1E78F4AA00A05A85 /* AddToCodeSnipit.swift */; };
 		4845ECAB1E77BA43008F0BF5 /* Empty-Smilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 4845ECAA1E77BA43008F0BF5 /* Empty-Smilly.png */; };
 		4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854562E1E6BC99B003D6B58 /* StatView.swift */; };
 		485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */; };
@@ -65,6 +66,7 @@
 		4829297C1E664E020086529A /* UpNextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpNextCell.swift; sourceTree = "<group>"; };
 		48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		482FBA241E7514AB003267D3 /* Empy smilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empy smilly.png"; sourceTree = "<group>"; };
+		483BD20E1E78F4AA00A05A85 /* AddToCodeSnipit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToCodeSnipit.swift; sourceTree = "<group>"; };
 		4845ECAA1E77BA43008F0BF5 /* Empty-Smilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Smilly.png"; sourceTree = "<group>"; };
 		4854562E1E6BC99B003D6B58 /* StatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreesToRadians.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		4890118F1E5A27B300734682 = {
 			isa = PBXGroup;
 			children = (
+				483BD20E1E78F4AA00A05A85 /* AddToCodeSnipit.swift */,
 				4890119A1E5A27B300734682 /* NExt */,
 				489011DF1E5A880600734682 /* Images */,
 				489011B21E5A27B300734682 /* NExtTests */,
@@ -402,6 +405,7 @@
 				489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */,
 				480955AD1E6E89FB009F4D1A /* PopAnimator.swift in Sources */,
 				48B043771E5E5FF400AD4F46 /* ListCell.swift in Sources */,
+				483BD20F1E78F4AA00A05A85 /* AddToCodeSnipit.swift in Sources */,
 				48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */,
 				4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */,
 				4829297D1E664E020086529A /* UpNextCell.swift in Sources */,

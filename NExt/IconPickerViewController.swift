@@ -64,10 +64,10 @@ class IconPickerViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as? IconCell
         if indexPath.row == 0 {
-            cell?.iconImageView.backgroundColor = UIColor.clear
+            cell?.centerIconImageView.backgroundColor = UIColor.clear
         }
         let iconName = icons[indexPath.row]
-        cell?.iconImageView.image = UIImage(named: iconName)
+        cell?.centerIconImageView.image = UIImage(named: iconName)
         
         // Label is pressent but hidden until needed
       cell?.iconLabel.isHidden = true

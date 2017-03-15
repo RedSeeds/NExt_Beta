@@ -35,16 +35,16 @@
                                             <rect key="frame" x="15" y="0.0" width="298" height="27"/>
                                             <subviews>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star 22.png" translatesAutoresizingMaskIntoConstraints="NO" id="ESN-ab-Izf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="27"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="27"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLb-Tq-dPm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="18.5" height="27"/>
+                                                    <rect key="frame" x="29" y="0.0" width="18.5" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7F9-3c-Ew5">
-                                                    <rect key="frame" x="25.5" y="0.0" width="272.5" height="27"/>
+                                                    <rect key="frame" x="54.5" y="0.0" width="243.5" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -420,9 +420,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIi-4O-HGZ" customClass="StatView" customModule="NExt" customModuleProvider="target">
                                             <rect key="frame" x="15" y="12" width="100" height="100"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgq-P4-QYN">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty-Smilly.png" translatesAutoresizingMaskIntoConstraints="NO" id="fgq-P4-QYN">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                    <color key="backgroundColor" red="0.8666666666666667" green="0.68235294117647061" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -636,23 +636,17 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="01Q-2v-dTr">
-                            <rect key="frame" x="15" y="0.0" width="100" height="60"/>
+                            <rect key="frame" x="15" y="0.0" width="150" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdT-g6-S7N">
-                                    <rect key="frame" x="0.0" y="3" width="100" height="54.5"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="46"/>
+                                    <rect key="frame" x="0.0" y="12.5" width="150" height="35.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                     <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="⇧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-KV-cDX">
-                                    <rect key="frame" x="100" y="20" width="0.0" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="width" constant="100" id="4AV-F0-ulW"/>
+                                <constraint firstAttribute="width" constant="150" id="4AV-F0-ulW"/>
                             </constraints>
                         </stackView>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKK-vR-ha2" customClass="StatView" customModule="NExt" customModuleProvider="target">
@@ -682,16 +676,16 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bvr-db-heS">
-                            <rect key="frame" x="119" y="11" width="214" height="38"/>
+                            <rect key="frame" x="169" y="11" width="164" height="38"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today is:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrR-u3-s1K">
-                                    <rect key="frame" x="0.0" y="0.0" width="214" height="16.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="164" height="16.5"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                     <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="highlightedColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh9-d9-TKg">
-                                    <rect key="frame" x="0.0" y="16.5" width="214" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="16.5" width="164" height="21.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" red="0.50196081400000003" green="1" blue="0.0" alpha="0.74981648489932884" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -770,8 +764,8 @@
                                 <constraint firstItem="HUZ-4l-hGB" firstAttribute="top" secondItem="2nn-5t-sbq" secondAttribute="bottom" constant="6" id="xYO-Fk-P4N"/>
                             </constraints>
                             <connections>
+                                <outlet property="centerIconImageView" destination="i6e-PZ-p0r" id="eVE-xs-It9"/>
                                 <outlet property="dueDate" destination="2nn-5t-sbq" id="RjF-jt-Vn3"/>
-                                <outlet property="iconImageView" destination="i6e-PZ-p0r" id="eVE-xs-It9"/>
                                 <outlet property="itemText" destination="HUZ-4l-hGB" id="BfS-PU-Jlm"/>
                             </connections>
                         </collectionViewCell>
@@ -1011,21 +1005,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cameraButton" destination="ykA-Uv-pcX" id="I59-1y-kXM"/>
-                        <outlet property="cameraImageView" destination="xUB-p3-Mjb" id="Rtl-M1-KyR"/>
+                        <outlet property="centerIconImageButton" destination="q33-J4-E9o" id="tFD-18-YMi"/>
                         <outlet property="centerIconLabel" destination="mLC-xP-Fbp" id="fuf-d4-TmN"/>
                         <outlet property="centerIconView" destination="uQH-xP-Bqh" id="joW-qy-dRl"/>
                         <outlet property="centerViewXconstraint" destination="Wdo-3Q-vMZ" id="9WN-0X-bEr"/>
                         <outlet property="centerViewYconstraint" destination="yjE-vo-zPE" id="PGt-Tj-lAe"/>
                         <outlet property="doneBarButton" destination="8CQ-Cp-erL" id="24S-9J-cu5"/>
-                        <outlet property="iconButton" destination="q33-J4-E9o" id="DZl-rP-VxZ"/>
-                        <outlet property="iconImageView" destination="Zkv-Ut-XpK" id="SdI-Rw-jGC"/>
+                        <outlet property="leftIconImageVIew" destination="xUB-p3-Mjb" id="Rtl-M1-KyR"/>
                         <outlet property="leftIconLabel" destination="XEs-eO-eqA" id="naz-zq-Z00"/>
                         <outlet property="leftIconView" destination="rHN-2e-JBO" id="wY6-p9-yUB"/>
+                        <outlet property="leftIconViewButton" destination="ykA-Uv-pcX" id="Ov7-lU-Zis"/>
                         <outlet property="leftIconViewXconstraint" destination="qVF-wu-Vex" id="bTs-Xk-TWa"/>
-                        <outlet property="photoButton" destination="9Wq-Fw-HdY" id="nLp-IV-1vW"/>
-                        <outlet property="photoImageView" destination="wwD-HT-EZC" id="oPw-ir-KUB"/>
+                        <outlet property="rightIconImageView" destination="wwD-HT-EZC" id="GkX-BW-C6f"/>
                         <outlet property="rightIconView" destination="Yy4-bC-8cq" id="EUb-dQ-bg8"/>
+                        <outlet property="rightIconViewButton" destination="9Wq-Fw-HdY" id="q4N-Ne-9uO"/>
                         <outlet property="rightIconViewLabel" destination="oIv-bN-9z6" id="jDy-Kf-qxk"/>
                         <outlet property="rightIconViewXcostraint" destination="dyc-CU-SbN" id="nhg-e2-rXg"/>
                         <outlet property="textField" destination="4qQ-67-SPZ" id="bY1-Md-Llo"/>
@@ -1162,7 +1155,7 @@
         <scene sceneID="5wr-By-5bE">
             <objects>
                 <collectionViewController id="i9k-ZF-TBU" customClass="IconPickerViewController" customModule="NExt" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="38V-vW-IG2">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="38V-vW-IG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -1274,8 +1267,8 @@
         <image name="Star large.png" width="136" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9na-9d-ocr"/>
         <segue reference="HSO-22-baS"/>
-        <segue reference="aoU-lz-E7R"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

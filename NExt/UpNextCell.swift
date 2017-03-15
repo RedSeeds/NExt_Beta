@@ -18,7 +18,7 @@ class UpNextCell: UICollectionViewCell {
     
 
     
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var centerIconImageView: UIImageView!
     
 
     

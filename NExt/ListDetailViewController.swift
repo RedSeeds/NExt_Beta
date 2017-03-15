@@ -31,6 +31,8 @@ UITextFieldDelegate {
     // Set in tableviewdidSetlect to tell UIImage picker methods which thumnail to populate for preview
     var cameraSelected = false
     var myphotosSelected = false
+    var centerIconViewSelected = false
+    var selectedIconImage: UIView?
     
     // Outlets
     @IBOutlet weak var textField: UITextField!
@@ -39,25 +41,25 @@ UITextFieldDelegate {
     // Icon views and buttons contained within the animated views
     // Left icon view
     @IBOutlet weak var leftIconView: UIView!
-    @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var cameraImageView: UIImageView!
+    @IBOutlet weak var leftIconViewButton: UIButton!
+    @IBOutlet weak var leftIconImageVIew: UIImageView!
     @IBOutlet weak var leftIconViewXconstraint: NSLayoutConstraint!
-     @IBOutlet weak var leftIconLabel: UILabel!
+    @IBOutlet weak var leftIconLabel: UILabel!
     
     //Center view
     @IBOutlet weak var centerIconView: UIView!
-    @IBOutlet weak var iconButton: UIButton!
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var centerIconImageButton: UIButton!
+    @IBOutlet weak var centerIconImageView: UIImageView!
     @IBOutlet weak var centerViewXconstraint: NSLayoutConstraint!
     @IBOutlet weak var centerViewYconstraint: NSLayoutConstraint!
     @IBOutlet weak var centerIconLabel: UILabel!
-   
+    
     
     
     // Right Icon view
     @IBOutlet weak var rightIconView: UIView!
-    @IBOutlet weak var photoButton: UIButton!
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var rightIconViewButton: UIButton!
+    @IBOutlet weak var rightIconImageView: UIImageView!
     @IBOutlet weak var rightIconViewXcostraint: NSLayoutConstraint!
     @IBOutlet weak var rightIconViewLabel: UILabel!
     
@@ -67,230 +69,176 @@ UITextFieldDelegate {
     // Left IconView Button
     @IBAction func leftIconViewButton(_ sender: Any) {
         takePhoto()
+        selectedIconImage = sender as? UIView
+        
+        print("SeleectedIconImage:\(String(describing: selectedIconImage))")
     }
     
+    
+    // Sets "selectedIconImage variable to the clicked view in Icon views
     @IBAction func rightIconViewButton(_ sender: Any) {
         pickPhoto()
+        
+        if sender as! UIButton == leftIconViewButton {
+            takePhoto()
+            selectedIconImage = leftIconImageVIew
+            
+        }else if sender as! UIButton == centerIconImageButton {
+            performSegue(withIdentifier: "PickIcon", sender: nil)
+            selectedIconImage = centerIconImageView
+            
+        }else if sender as! UIButton == rightIconViewButton {
+            pickPhoto()
+            selectedIconImage = rightIconImageView
+        }
     }
-
+    
     
     // Actions
     @IBAction func cancel() {
         delegate?.listDetailViewControllerDidCancel(self)
     }
+    
     @IBAction func done() {
         if let checklist = checklistToEdit {
+            // Process to pass back an edited Checklist object back to the Delegate
             checklist.name = textField.text!
+            // Check to see if the camera, or take picture option was selected. If yes, image views are set to relect
+            
             if cameraSelected {
                 checklist.iconName = ""
-                checklist.pictureTaken = cameraImageView.image
+                checklist.capturedPhoto = leftIconImageVIew.image
                 checklist.photo = nil
             }else if myphotosSelected {
                 checklist.iconName = ""
-                checklist.photo = photoImageView.image
-                checklist.pictureTaken = nil
-            }else{
+                checklist.photo = rightIconImageView.image
+                checklist.capturedPhoto = nil
+            }else if centerIconViewSelected {
                 checklist.iconName = iconName
-                checklist.pictureTaken = nil
+                checklist.capturedPhoto = nil
                 checklist.photo = nil
             }
-           // checklist.photo =  photoImageView.image
-           // checklist.pictureTaken = cameraImageView.image
             
+            // checklist.iconName = iconName // add this
+            delegate?.listDetailViewController(self, didFinishEditing: checklist)
             
-          
-           // checklist.iconName = iconName // add this
-            delegate?.listDetailViewController(self,
-                                               didFinishEditing: checklist)
-                } else {
-            
+        } else {
+            // process to pass a new Checklist object back to the Delegate
             let checklist = Checklist(name: textField.text!)
-            checklist.iconName = iconName // add this
             
-            if photoImageView.image == UIImage(named: "Empty-Smilly") {
-                checklist.photo = photoImageView.image
-                checklist.pictureTaken = nil
+            if cameraSelected {
                 checklist.iconName = ""
-            }else if cameraImageView.image == UIImage(named: "Empty-Smilly") {
-                checklist.pictureTaken = cameraImageView.image
+                checklist.capturedPhoto = leftIconImageVIew.image
                 checklist.photo = nil
+            }else if myphotosSelected{
+                checklist.iconName = ""
+                checklist.photo = rightIconImageView.image
+                checklist.capturedPhoto = nil
+            }else if centerIconViewSelected {
+                // if no photo selected, or new picture taken then the selected icon will be passed back
                 checklist.iconName = iconName
                 
+            }else{
+                checklist.iconName = "Empty-Smilly"
             }
-            delegate?.listDetailViewController(self,
-                                               didFinishAdding: checklist)
+            delegate?.listDetailViewController(self, didFinishAdding: checklist)
         }
-        
-        // Method to pass photo back to AllListViewController to display as the List icon image
-        
         
     }
     
     // Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PickIcon" {
+            
             let controller = segue.destination as! IconPickerViewController
             controller.delegate = self
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // sets a default image for all three icon images prior to user setting own
+        let defaultIconImage = UIImage(named: "Empty-Smilly")
+        
+        // 1. Checks if a list has been passed to edit, if yes, moves to 2
         if let checklist = checklistToEdit {
             title = "Edit Checklist"
             textField.text = checklist.name
             doneBarButton.isEnabled = true
             
-            // Checks for a stored photo
+            // 2. Check to see if a photo has been saved as an Icon, if not then sets to a default image specified by the developer
+            
             if let photo = checklist.photo {
-                
-                photoImageView.image = photo
-                
-            }
-            if let pictureTaken = checklist.pictureTaken {
-                cameraImageView.image = pictureTaken
-                
+                rightIconImageView.image = photo
+            }else{
+                rightIconImageView.image = defaultIconImage
             }
             
-            iconName = checklist.iconName
-            iconImageView.image = UIImage(named: iconName)
+            if let capturedPicture = checklist.capturedPhoto {
+                rightIconImageView.image = capturedPicture
+            }else{
+                rightIconImageView.image = defaultIconImage
+            }
             
-            
-            
-        }else{
-            
-            photoImageView.image = UIImage(named: "Empty-Smilly")
-            cameraImageView.image = UIImage(named: "Empty-Smilly")
+            if checklist.iconName == "" {
+                centerIconImageView.image = UIImage(named: checklist.iconName)
+                
+            }else{
+                centerIconImageView.image = defaultIconImage
+            }
         }
         
-       iconViews = [leftIconView,centerIconView,rightIconView]
-        setUpButtonAndViews()
-        transform(transform: true)
+        // adds icon image views to array for easy sorting
+        iconViews = [leftIconView,centerIconView,rightIconView]
         
+        // method used to set radious, borders and border colors on icon Views. Since Icon imageViews are in Icon Views and cliped to bounds the icon imageView is set to the radious of the Parent View
+        setUpButtonAndViews()
     }
+ 
+    // MARK: HELPER METHODS *******************************
     
-    // Data source
-    
-    
-    
-    // Delegate Methods
-    
-    // Sets images views radious to a circle
-    
+    // Sets icon views radious to a circle, by itterating through array set up in viewdidload
     func setUpButtonAndViews(){
         for view in iconViews {
             view.layer.cornerRadius = view.frame.width / 2
             view.layer.borderWidth = 0.5
             view.layer.borderColor = UIColor.white.cgColor
-           
-            
         }
     }
     
-    func transform(transform: Bool){
+    func transformView(view: UIView, size: CGFloat){
         
-        for view in iconViews {
-            
-            if transform {
-                view.transform = CGAffineTransform(scaleX: 0, y: 0)
-            }else if !transform{
-                
-                view.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }
-          
-        }
-     
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            view.transform = CGAffineTransform(scaleX: size, y: size)
+        }, completion: nil)
     }
+    
+    // End of helper menthods *******************************
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Sets text feild to first responder, meaning places curser in filed and shows keypad
         textField.becomeFirstResponder()
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       
         
         // Animation to set the selected view label to bold
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-            
-            if self.cameraSelected {
-                
-                
-                self.leftIconLabel.text = "Useing"
-                self.leftIconLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
-                self.centerIconLabel.text = "Themes"
-                 self.centerIconLabel.font = UIFont.systemFont(ofSize: 15)
-                self.rightIconViewLabel.text = "Photos"
-                   self.rightIconViewLabel.font = UIFont.systemFont(ofSize: 15)
-               
-             
-            }else if self.myphotosSelected {
-                self.leftIconLabel.text = "Camera"
-                self.centerIconLabel.font = UIFont.systemFont(ofSize: 15)
-                self.centerIconLabel.text = "Themes"
-                self.centerIconLabel.font = UIFont.systemFont(ofSize: 15)
-                self.rightIconViewLabel.text = "Useing"
-                self.rightIconViewLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
-            }else{
-                self.leftIconLabel.text = "Camera"
-                self.leftIconLabel.font = UIFont.systemFont(ofSize: 15)
-                self.centerIconLabel.text = "Useing"
-                self.centerIconLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
-                self.rightIconViewLabel.text = "Photos"
-                 self.rightIconViewLabel.font = UIFont.systemFont(ofSize: 15)
-                
-            }
-         
-            self.transform(transform: false)
-            
-            
             self.view.layoutIfNeeded()
-            
         }, completion: nil)
-        
-        // Alert to prompt user to save image to photos or decline. Photo can still be used but will not be accessable once replaced by a new image
-        if cameraSelected {
-            let alertController = UIAlertController(title: "Photo Captured", message: "Would you like to save your image", preferredStyle: UIAlertControllerStyle.alert) //Replace UIAlertControllerStyle.Alert by UIAlertControllerStyle.alert
-            let doNotSave = UIAlertAction(title: "Don't save", style: UIAlertActionStyle.destructive) {
-                (result : UIAlertAction) -> Void in
-                print("")
-            }
-            
-            // Replace UIAlertActionStyle.Default by UIAlertActionStyle.default
-            let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) {
-                (result : UIAlertAction) -> Void in
-                print("")
-                
-                // Saves to users Photos
-                self.savePhoto()
-            }
-            
-            alertController.addAction(doNotSave)
-            alertController.addAction(saveAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
-        
-        
         
         UIView.animate(withDuration: 0.5, delay: 0.8, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseIn, animations: {
-            
-            
-            
-            
-            
             self.view.layoutIfNeeded()
-            
         }, completion: nil)
-        
     }
     
-    override func tableView(_ tableView: UITableView,
-                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.section == 1 {
-            
             return indexPath
         }else{
             return nil
@@ -301,25 +249,22 @@ UITextFieldDelegate {
         
     }
     
-    func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let oldText = textField.text! as NSString
         let newText = oldText.replacingCharacters(in: range, with: string)
             as NSString
         doneBarButton.isEnabled = (newText.length > 0)
         return true
     }
+    
 }
-
 
 extension ListDetailViewController: IconPickerViewControllerDelegate {
     
-    func iconPicker(_ picker: IconPickerViewController,
-                    didPick iconName: String) {
+    func iconPicker(_ picker: IconPickerViewController, didPick iconName: String) {
         self.iconName = iconName
         print(iconName)
-        iconImageView.image = UIImage(named: iconName)
+        centerIconImageView.image = UIImage(named: iconName)
         let _ = navigationController?.popViewController(animated: true)
     }
 }
@@ -327,10 +272,7 @@ extension ListDetailViewController: IconPickerViewControllerDelegate {
 // Used to capture photo from camera or users photos, and use as List icon image
 extension ListDetailViewController: UIImagePickerControllerDelegate{
     
-    @IBAction func takePhoto() {
-        cameraSelected = true
-        myphotosSelected = false
-        
+    func takePhoto() {
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
@@ -346,17 +288,17 @@ extension ListDetailViewController: UIImagePickerControllerDelegate{
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             picker.allowsEditing = true
             if cameraSelected {
-                cameraImageView.contentMode = .scaleAspectFill
-                cameraImageView.image = pickerImage
+                leftIconImageVIew.contentMode = .scaleAspectFill
+                leftIconImageVIew.image = pickerImage
             }else if myphotosSelected {
-                photoImageView.contentMode = .scaleAspectFill
-                photoImageView.image = pickerImage
+                rightIconImageView.contentMode = .scaleAspectFill
+                rightIconImageView.image = pickerImage
             }
             picker.dismiss(animated: true, completion: nil )
             
         }
     }
-    @IBAction func pickPhoto() {
+    func pickPhoto() {
         
         myphotosSelected = true
         cameraSelected = false
@@ -369,15 +311,17 @@ extension ListDetailViewController: UIImagePickerControllerDelegate{
         }
     }
     
-    @IBAction func savePhoto() {
-        let imageData = UIImagePNGRepresentation(photoImageView.image!)
+    func savePhoto() {
+        let imageData = UIImagePNGRepresentation(rightIconImageView.image!)
         let compresedImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compresedImage!, nil, nil, nil)
         
-        let alert = UIAlertController(title: "Saved", message: "Your image has been saved", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        /* Un comment to push alert stating the photo has been saved
+         let alert = UIAlertController(title: "Saved", message: "Your image has been saved", preferredStyle: .alert)
+         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+         alert.addAction(okAction)
+         self.present(alert, animated: true, completion: nil)
+         */
     }
 }
 
