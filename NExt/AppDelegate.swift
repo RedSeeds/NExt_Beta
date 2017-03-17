@@ -33,7 +33,7 @@ let dataModel = DataModel()
         
         let center = UNUserNotificationCenter.current()        
         center.delegate = self
-        
+        ChecklistItemDelegate.itemDidSendAlert(UNUserNotificationCenter as! ChecklistItemDelegate)
         return true
     }
 
@@ -93,11 +93,10 @@ let dataModel = DataModel()
         return container
     }()
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler:
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,withCompletionHandler completionHandler:
         @escaping (UNNotificationPresentationOptions) -> Void) {
         print("Received local notification \(notification)")
+        
     }
     
     // MARK: - Core Data Saving support

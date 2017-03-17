@@ -9,6 +9,9 @@
 import Foundation
 import UserNotifications
 
+protocol ChecklistItemDelegate: class {
+    func itemDidSendAlert(controller: ChecklistItem, didAlert alert: UNUserNotificationCenter)
+}
 
 class ChecklistItem: NSObject, NSCoding {
     var text = ""
@@ -16,7 +19,7 @@ class ChecklistItem: NSObject, NSCoding {
     var dueDate = Date()
     var shouldRemind = false
     var itemID: Int
-    
+    weak var delgate: ChecklistItemDelegate?
     // Required
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,6 +32,7 @@ class ChecklistItem: NSObject, NSCoding {
     }
     
     override init() {
+        
         itemID = DataModel.nextChecklistItemID()
         super.init()
     }
@@ -48,7 +52,7 @@ class ChecklistItem: NSObject, NSCoding {
     func toggleChecked() {
         checked = !checked
     }
-    
+   
     func scheduleNotification() {
         removeNotification()
         if shouldRemind && dueDate > Date() {
@@ -71,6 +75,8 @@ class ChecklistItem: NSObject, NSCoding {
             let center = UNUserNotificationCenter.current()
             center.add(request)
             print("Scheduled notification \(request) for itemID \(itemID)")
+            delgate?.itemDidSendAlert(controller: self, didAlert: center)
+            
         }
     }
     
@@ -79,6 +85,6 @@ class ChecklistItem: NSObject, NSCoding {
         center.removePendingNotificationRequests(
             withIdentifiers: ["\(itemID)"])
     }
-    
+   
     
 }
