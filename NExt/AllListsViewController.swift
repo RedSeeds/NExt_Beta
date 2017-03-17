@@ -1,4 +1,4 @@
-//
+ //
 //  AllListsViewController.swift
 //  NExt
 //
@@ -143,7 +143,9 @@ class AllListsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as! ListCell
-
+   
+        
+        
         let checklist = dataModel.lists[indexPath.row]
         cell.text1.text = checklist.name
         let count = checklist.countUncheckedItems()
@@ -177,16 +179,10 @@ class AllListsViewController: UITableViewController {
         cell.badgeViewYContraint.constant = -cell.statView.frame.height / 2 + cell.badgeView.frame.height / 2
         cell.badgeViewXConstraint.constant = -cell.statView.frame.height / 2 + cell.badgeView.frame.height / 2
         
-        if checklist.iconName == "" && checklist.photo != nil {
-            cell.itemImageView?.image = checklist.photo
-            
-        }else if checklist.iconName == "" && checklist.capturedPhoto != nil{
-            cell.itemImageView?.image = checklist.capturedPhoto
         
-        }else{
-            cell.itemImageView?.image = UIImage(named: checklist.iconName)
-        }
-       
+       cell.itemImageView.image = checklist.iconImage
+        
+        
         cell.itemImageView?.layer.borderColor = UIColor.lightGray.cgColor
         cell.itemImageView?.layer.borderWidth = 0.5
         cell.itemImageView?.layer.cornerRadius = cell.statView.frame.width / 2
@@ -343,9 +339,8 @@ extension AllListsViewController:ListDetailViewControllerDelegate {
         
     }
     
-    func listDetailViewControllerDidCancel(
-        _ controller: ListDetailViewController) {
-        dismiss(animated: true, completion: nil)
+    func listDetailViewControllerDidCancel(_ controller: ListDetailViewController) {
+dismiss(animated: true, completion: nil)
     }
     
     func listDetailViewController(_ controller: ListDetailViewController, didFinishAdding checklist: Checklist) {
@@ -377,85 +372,5 @@ extension AllListsViewController: UINavigationControllerDelegate {
     }
 }
 
-/*
- 
- extension AllListsViewController: UIPopoverPresentationControllerDelegate {
- 
- func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
- return .none
- }
  
  
- 
- func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
- 
- popUpVissible = false
- UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: [], animations: { () -> Void in
- 
- 
- }, completion: nil)
- return true
- 
- 
- }
- 
- func addPopOverView(_ sender: UIView?, touchLocation: CGRect?){
- 
- 
- 
- let addEditVC = storyboard!.instantiateViewController(withIdentifier: "ListDetailViewController") as! ListDetailViewController
- addEditVC.modalPresentationStyle = .popover
- addEditVC.preferredContentSize = CGSize(width: 280, height: 400)
- addEditVC.delegate = self
- 
- let popoverViewController = addEditVC.popoverPresentationController
- 
- popoverViewController?.permittedArrowDirections = .any
- popoverViewController?.delegate = self
- popoverViewController?.sourceView = sender
- popoverViewController?.sourceRect = touchLocation!
- popoverViewController?.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 60)
- 
- print(addEditVC.view.isHidden)
- present(
- addEditVC,
- animated: true,
- completion: nil)
- 
- popUpVissible = true
- UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: [], animations: { () -> Void in
- 
- 
- 
- }, completion: nil)
- 
- 
- }
- }
- 
- extension AllListsViewController: UIViewControllerTransitioningDelegate {
- 
- 
- func animationController(
- forPresented presented: UIViewController,
- presenting: UIViewController,
- source: UIViewController) ->
- UIViewControllerAnimatedTransitioning? {
- 
- let frame = CGRect(x: 10, y: 10, width: 10, height: 10)
- transition.originFrame = frame
- 
- transition.presenting = true
- 
- return transition
- }
- 
- func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
- transition.presenting = false
- return transition
- }
- 
- }
- 
- 
- */

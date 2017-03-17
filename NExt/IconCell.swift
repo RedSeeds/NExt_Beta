@@ -15,7 +15,7 @@ import UIKit
 class IconCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var centerIconImageView: UIImageView!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     @IBOutlet weak var iconLabel: UILabel!
     

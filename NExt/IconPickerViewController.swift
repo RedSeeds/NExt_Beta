@@ -9,8 +9,10 @@
 import UIKit
 
 protocol IconPickerViewControllerDelegate: class {
+   // func iconPicker(_ picker: IconPickerViewController,
+                    // didPick themeIconName: String)
     func iconPicker(_ picker: IconPickerViewController,
-                    didPick iconName: String)
+                    didPick themeIconImage: UIImage)
 }
 
 
@@ -64,10 +66,14 @@ class IconPickerViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as? IconCell
         if indexPath.row == 0 {
-            cell?.centerIconImageView.backgroundColor = UIColor.clear
+            cell?.iconImageView.backgroundColor = UIColor.clear
         }
-        let iconName = icons[indexPath.row]
-        cell?.centerIconImageView.image = UIImage(named: iconName)
+        let themeIcon = UIImage(named: icons[indexPath.row])
+        cell?.iconImageView.image = themeIcon
+        
+        
+       // let themeIconName = icons[indexPath.row]
+        //cell?.iconImageView.image = UIImage(named: themeIconName)
         
         // Label is pressent but hidden until needed
       cell?.iconLabel.isHidden = true
@@ -78,9 +84,12 @@ class IconPickerViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let themeIcon = UIImage(named: icons[indexPath.row])
+        delegate?.iconPicker(self, didPick: themeIcon!)
         
-       let iconName = icons[indexPath.row]
-        delegate?.iconPicker(self, didPick: iconName)
+        
+      // let themeIconName = icons[indexPath.row]
+        //delegate?.iconPicker(self, didPick: themeIcon)
 
     }
     

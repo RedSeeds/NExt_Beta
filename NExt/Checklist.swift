@@ -13,17 +13,16 @@ import UIKit
 class Checklist: NSObject, NSCoding {
     var name = ""
     var items = [ChecklistItem]()
-    var iconName: String
-    var photo: UIImage?
-    var capturedPhoto: UIImage?
+    var iconImage = UIImage()
     
     convenience init(name: String) {
-        self.init(name: name, iconName: "Empty-Smilly")
+        self.init(name: name, iconImage: UIImage(named: "Empty-Smilly")! )
     }
     
-    init(name: String, iconName: String) {
+    init(name: String, iconImage: UIImage) {
         self.name = name
-        self.iconName = iconName
+        self.iconImage = iconImage
+ 
         
         super.init()
     }
@@ -31,21 +30,20 @@ class Checklist: NSObject, NSCoding {
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObject(forKey: "Name") as! String
         items = aDecoder.decodeObject(forKey: "Items") as! [ChecklistItem]
-        iconName = aDecoder.decodeObject(forKey: "IconName") as! String
-      photo = aDecoder.decodeObject(forKey: "Photo") as? UIImage
-        capturedPhoto = aDecoder.decodeObject(forKey: "PictureTaken") as? UIImage
+        iconImage = aDecoder.decodeObject(forKey: "IconImage") as! UIImage
         super.init()
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: "Name")
         aCoder.encode(items, forKey: "Items")
-        aCoder.encode(iconName, forKey: "IconName")
-    aCoder.encode(photo, forKey: "Photo")
-        aCoder.encode(capturedPhoto, forKey: "PictureTaken")
+        aCoder.encode(iconImage, forKey: "IconImage")
     }
     
     // Class methods 
+    
+
+    
     func countUncheckedItems() -> Int {
         var count = 0
         for item in items where !item.checked {
@@ -75,6 +73,7 @@ class Checklist: NSObject, NSCoding {
         return count
         
     }
+    
     func overDueItems() -> Int {
         var count = 0
         let date = NSDate()

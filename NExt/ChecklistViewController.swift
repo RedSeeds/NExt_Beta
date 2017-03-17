@@ -59,7 +59,7 @@ class ChecklistViewController: UITableViewController {
         super.viewDidLoad()
         //title = checklist.name
        captionViewColorView.alpha = 0.8
-       headerImageView.image = UIImage(named: checklist.iconName)
+       headerImageView.image = checklist.iconImage
         headerImageView.contentMode = .scaleAspectFill
         
         
