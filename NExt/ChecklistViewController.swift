@@ -79,7 +79,7 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return 80
         
     }
     
@@ -220,8 +220,10 @@ extension ChecklistViewController {
             
             if item.checked {
                 label.alpha = 0.3
+                label2.alpha = 0.3
             } else {
                 label.alpha = 1.0
+                label2.alpha = 1.0
             }
             
             

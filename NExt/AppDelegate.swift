@@ -29,7 +29,7 @@ let dataModel = DataModel()
         //navigationBarAppearace.tintColor = UIColor(red: 51, green: 51, blue: 51, alpha: 1.0)
         
       
-       navigationBarAppearace.barTintColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0)
+       navigationBarAppearace.barTintColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0)
         
         let center = UNUserNotificationCenter.current()        
         center.delegate = self

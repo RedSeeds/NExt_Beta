@@ -31,6 +31,11 @@ UITextFieldDelegate {
     var defaultIconName = "Empty-Smilly"
     var selectedIconName = ""
     
+    // test for animation of dials
+    
+    
+    
+    
     // Set in tableviewdidSetlect to tell UIImage picker methods which thumnail to populate for preview
     
     // Outlets
@@ -38,17 +43,25 @@ UITextFieldDelegate {
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
     // Icon views and buttons contained within the animated views
+    // top display for images picked as icon
+    
+    @IBOutlet weak var topIconDiplayView: UIView!
+    
     // Left icon view
     @IBOutlet weak var leftIconView: UIView!
     @IBOutlet weak var leftIconViewButton: UIButton!
     @IBOutlet weak var leftIconImageVIew: UIImageView!
     @IBOutlet weak var leftIconLabel: UILabel!
+    @IBOutlet weak var leftIconXConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leftIconYConstraint: NSLayoutConstraint!
     
     //Center view
     @IBOutlet weak var centerIconView: UIView!
     @IBOutlet weak var centerIconImageButton: UIButton!
     @IBOutlet weak var centerIconImageView: UIImageView!
     @IBOutlet weak var centerIconLabel: UILabel!
+    @IBOutlet weak var centerIconXConstraint: NSLayoutConstraint!
+    @IBOutlet weak var centerIconYConstraint: NSLayoutConstraint!
     
     
     
@@ -57,6 +70,9 @@ UITextFieldDelegate {
     @IBOutlet weak var rightIconViewButton: UIButton!
     @IBOutlet weak var rightIconImageView: UIImageView!
     @IBOutlet weak var rightIconViewLabel: UILabel!
+    @IBOutlet weak var rightIconXConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightIconYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableviewCellone: UITableViewCell!
     
     
     
@@ -68,16 +84,24 @@ UITextFieldDelegate {
     @IBAction func selectIconButton(_ sender: Any) {
         
         if sender as! UIButton == leftIconViewButton {
-            
+            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+                self.leftIconXConstraint.constant = 0
+                
+              
+                self.view.layoutIfNeeded()
+                
+            }, completion: nil)
             takePhoto()
             
         }else if sender as! UIButton == centerIconImageButton {
+        
+            self.leftIconYConstraint.constant = 0
             
-         
             
         }else if sender as! UIButton == rightIconViewButton {
             pickPhoto()
-          
+            
+            self.rightIconXConstraint.constant = 0
         }
     }
     
@@ -99,7 +123,7 @@ UITextFieldDelegate {
             // 3 set icon image to the center imageview
             checklist.iconImage = centerIconImageView.image!
             
- 
+            
             
             // 4. pass edited checklist back to presenting controller via delegate
             delegate?.listDetailViewController(self, didFinishEditing: checklist)
@@ -110,7 +134,7 @@ UITextFieldDelegate {
             let checklist = Checklist(name: textField.text!)
             checklist.iconImage = centerIconImageView.image!
             
-             delegate?.listDetailViewController(self, didFinishAdding: checklist)
+            delegate?.listDetailViewController(self, didFinishAdding: checklist)
         }
         
     }
@@ -140,11 +164,11 @@ UITextFieldDelegate {
         }
         
         // adds icon image views to array for easy sorting
-        iconViews = [leftIconView,centerIconView,rightIconView]
+        iconViews = [leftIconView,centerIconView,rightIconView,topIconDiplayView]
         
         // method used to set radious, borders and border colors on icon Views. Since Icon imageViews are in Icon Views and cliped to bounds the icon imageView is set to the radious of the Parent View
         setUpButtonAndViews()
-
+        
         
     }
     
@@ -175,21 +199,39 @@ UITextFieldDelegate {
         // Sets text feild to first responder, meaning places curser in filed and shows keypad
         textField.becomeFirstResponder()
         
+        self.transformView(view: self.leftIconView, size: 0)
+        self.transformView(view: self.rightIconView, size: 0)
+        self.transformView(view: self.centerIconView, size: 0)
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-            UIView.animate(withDuration: 1.0, animations: {
-                           }, completion: nil )
         
-        // animates imageviews upon appearing
-            self.transformView(view: self.leftIconView, size: 1)
-            self.transformView(view: self.rightIconView, size: 1)
-            self.transformView(view: self.centerIconView, size: 1)
-    
+        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+            
+            // animates imageviews upon appearing
+            self.transformView(view: self.leftIconView, size: 1.3)
+            self.transformView(view: self.rightIconView, size: 1.3)
+            self.transformView(view: self.centerIconView, size: 1.3)
+            self.transformView(view: self.topIconDiplayView, size: 1)
+            
+            self.leftIconXConstraint.constant = -120
+            self.centerIconXConstraint.constant = 0
+            self.rightIconXConstraint.constant = 120
+            
+        
+            self.view.layoutIfNeeded()
+            
+            
+        }, completion: nil)
+        
+        
+        
+        
+        
     }
-
+    
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.section == 1 {
             return indexPath
@@ -219,7 +261,7 @@ extension ListDetailViewController: IconPickerViewControllerDelegate {
         // 2 allows the vc to be dismissed by the delgate
         let _ = navigationController?.popViewController(animated: true)
     }
-  
+    
 }
 
 // Used to capture photo from camera or users photos, and use as List icon image
@@ -244,9 +286,9 @@ extension ListDetailViewController: UIImagePickerControllerDelegate{
             
             // 2 place image in the image view as an icon image
             centerIconImageView.image = pickerImage
-            }
-            picker.dismiss(animated: true, completion: nil )
         }
+        picker.dismiss(animated: true, completion: nil )
+    }
     
     func pickPhoto() {
         
@@ -260,20 +302,20 @@ extension ListDetailViewController: UIImagePickerControllerDelegate{
     }
     
     /*
-    // uncomment to allow user to save photo. Disabled to save on memory storage
-    func savePhoto() {
-        let imageData = UIImagePNGRepresentation(rightIconImageView.image!)
-        let compresedImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compresedImage!, nil, nil, nil)
-        
-        /* Un comment to push alert stating the photo has been saved
-         let alert = UIAlertController(title: "Saved", message: "Your image has been saved", preferredStyle: .alert)
-         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-         alert.addAction(okAction)
-         self.present(alert, animated: true, completion: nil)
-         */
-    }
- */
+     // uncomment to allow user to save photo. Disabled to save on memory storage
+     func savePhoto() {
+     let imageData = UIImagePNGRepresentation(rightIconImageView.image!)
+     let compresedImage = UIImage(data: imageData!)
+     UIImageWriteToSavedPhotosAlbum(compresedImage!, nil, nil, nil)
+     
+     /* Un comment to push alert stating the photo has been saved
+     let alert = UIAlertController(title: "Saved", message: "Your image has been saved", preferredStyle: .alert)
+     let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+     alert.addAction(okAction)
+     self.present(alert, animated: true, completion: nil)
+     */
+     }
+     */
 }
 
 extension ListDetailViewController: UINavigationControllerDelegate{
