@@ -33,7 +33,7 @@ let dataModel = DataModel()
         
         let center = UNUserNotificationCenter.current()        
         center.delegate = self
-        ChecklistItemDelegate.itemDidSendAlert(UNUserNotificationCenter as! ChecklistItemDelegate)
+   
         return true
     }
 
