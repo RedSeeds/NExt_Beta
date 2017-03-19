@@ -39,6 +39,7 @@
 		48CB0B4D1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4C1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift */; };
 		48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4E1E712E1500965C26 /* IconCell.swift */; };
 		48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA3C41E5B928500F470D7 /* DataModel.swift */; };
+		48E3084A1E7E4DEB00D792A7 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E308491E7E4DEB00D792A7 /* GraphView.swift */; };
 		48EE9A921E7A4606009DC0F5 /* Empty-Smilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 48EE9A911E7A4606009DC0F5 /* Empty-Smilly.png */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		48CB0B4C1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureVIewControllerViewController.swift; sourceTree = "<group>"; };
 		48CB0B4E1E712E1500965C26 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		48DCA3C41E5B928500F470D7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		48E308491E7E4DEB00D792A7 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		48EE9A911E7A4606009DC0F5 /* Empty-Smilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Smilly.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				489011A51E5A27B300734682 /* Assets.xcassets */,
 				489011AA1E5A27B300734682 /* Info.plist */,
 				489011A21E5A27B300734682 /* NExt.xcdatamodeld */,
+				48E308491E7E4DEB00D792A7 /* GraphView.swift */,
 			);
 			path = NExt;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				48B043791E5EAE9500AD4F46 /* ListHeaderView.swift in Sources */,
 				489011D31E5A2A2300734682 /* ChecklistItemCell.swift in Sources */,
 				489011D81E5A317700734682 /* ItemDetailViewController.swift in Sources */,
+				48E3084A1E7E4DEB00D792A7 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

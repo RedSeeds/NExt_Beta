@@ -31,9 +31,11 @@ UITextFieldDelegate {
     var defaultIconName = "Empty-Smilly"
     var selectedIconName = ""
     
+
     // test for animation of dials
     
     
+   
     
     
     // Set in tableviewdidSetlect to tell UIImage picker methods which thumnail to populate for preview
@@ -46,6 +48,7 @@ UITextFieldDelegate {
     // top display for images picked as icon
     
     @IBOutlet weak var topIconDiplayView: UIView!
+    @IBOutlet weak var topIconDisplayViewYconstraint: NSLayoutConstraint!
     
     // Left icon view
     @IBOutlet weak var leftIconView: UIView!
@@ -53,7 +56,7 @@ UITextFieldDelegate {
     @IBOutlet weak var leftIconImageVIew: UIImageView!
     @IBOutlet weak var leftIconLabel: UILabel!
     @IBOutlet weak var leftIconXConstraint: NSLayoutConstraint!
-    @IBOutlet weak var leftIconYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leftIconBottom: NSLayoutConstraint!
     
     //Center view
     @IBOutlet weak var centerIconView: UIView!
@@ -61,7 +64,7 @@ UITextFieldDelegate {
     @IBOutlet weak var centerIconImageView: UIImageView!
     @IBOutlet weak var centerIconLabel: UILabel!
     @IBOutlet weak var centerIconXConstraint: NSLayoutConstraint!
-    @IBOutlet weak var centerIconYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var centerIconBottom: NSLayoutConstraint!
     
     
     
@@ -71,10 +74,11 @@ UITextFieldDelegate {
     @IBOutlet weak var rightIconImageView: UIImageView!
     @IBOutlet weak var rightIconViewLabel: UILabel!
     @IBOutlet weak var rightIconXConstraint: NSLayoutConstraint!
-    @IBOutlet weak var rightIconYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightIconYBottom: NSLayoutConstraint!
     @IBOutlet weak var tableviewCellone: UITableViewCell!
     
     
+    var mirrorImage: UIImage!
     
     // Outlets used to capture user photos for list icons
     // Left IconView Button
@@ -85,7 +89,7 @@ UITextFieldDelegate {
         
         if sender as! UIButton == leftIconViewButton {
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
-                self.leftIconXConstraint.constant = 0
+                self.leftIconXConstraint.constant = -self.topIconDiplayView.frame.height - 20
                 
               
                 self.view.layoutIfNeeded()
@@ -95,13 +99,13 @@ UITextFieldDelegate {
             
         }else if sender as! UIButton == centerIconImageButton {
         
-            self.leftIconYConstraint.constant = 0
+            self.leftIconBottom.constant = self.topIconDiplayView.frame.height + 20
             
             
         }else if sender as! UIButton == rightIconViewButton {
             pickPhoto()
             
-            self.rightIconXConstraint.constant = 0
+            self.rightIconXConstraint.constant = 120
         }
     }
     
@@ -156,6 +160,7 @@ UITextFieldDelegate {
             title = "Edit Checklist"
             textField.text = checklist.name
             doneBarButton.isEnabled = true
+            mirrorImage = checklist.iconImage
             
             // 2 ask the checklist for the saved icon image
             centerIconImageView.image = checklist.iconImage
@@ -202,6 +207,8 @@ UITextFieldDelegate {
         self.transformView(view: self.leftIconView, size: 0)
         self.transformView(view: self.rightIconView, size: 0)
         self.transformView(view: self.centerIconView, size: 0)
+       
+      
         
         
     }
@@ -216,9 +223,10 @@ UITextFieldDelegate {
             self.transformView(view: self.centerIconView, size: 1.3)
             self.transformView(view: self.topIconDiplayView, size: 1)
             
-            self.leftIconXConstraint.constant = -120
-            self.centerIconXConstraint.constant = 0
-            self.rightIconXConstraint.constant = 120
+            self.leftIconXConstraint.constant = -self.topIconDiplayView.frame.width - 20
+            
+            self.centerIconBottom.constant = 150
+            self.rightIconXConstraint.constant = self.topIconDiplayView.frame.height + 20
             
         
             self.view.layoutIfNeeded()
@@ -227,10 +235,11 @@ UITextFieldDelegate {
         }, completion: nil)
         
         
-        
-        
-        
+   
     }
+    
+
+    
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.section == 1 {
@@ -257,6 +266,7 @@ extension ListDetailViewController: IconPickerViewControllerDelegate {
         
         // 1 sets the selected image as the icon image
         centerIconImageView.image = themeIconImage
+
         
         // 2 allows the vc to be dismissed by the delgate
         let _ = navigationController?.popViewController(animated: true)
@@ -286,6 +296,7 @@ extension ListDetailViewController: UIImagePickerControllerDelegate{
             
             // 2 place image in the image view as an icon image
             centerIconImageView.image = pickerImage
+           
         }
         picker.dismiss(animated: true, completion: nil )
     }
@@ -322,5 +333,22 @@ extension ListDetailViewController: UINavigationControllerDelegate{
     
 }
 
-
+extension UIView {
+    
+    func drawGradient(_ startColor:UIColor, endColor: UIColor, startPoint:CGPoint, endPoint:CGPoint) {
+        
+        let colors = [startColor.cgColor, endColor.cgColor]
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let colorLocations:[CGFloat] = [0.0, 1.0]
+        let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: colorLocations)
+        let context = UIGraphicsGetCurrentContext()
+        
+        context?.drawLinearGradient(gradient!,
+                                    start: startPoint,
+                                    end: endPoint,
+                                    options: [])
+        
+    }
+    
+}
 
