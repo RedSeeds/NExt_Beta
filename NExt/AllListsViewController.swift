@@ -20,19 +20,18 @@ class AllListsViewController: UITableViewController {
     let transition = PopAnimator()
     var progressPercentage: CGFloat = 0
     var dataModel: DataModel!
-    var categoryImage = ""
     var allItems: [ChecklistItem] = []
-    var redLineShowing = false
-    var nextItemDue: ChecklistItem?
+    var checklistWithNextDueItem: Checklist?
+    var nextDueItem: ChecklistItem?
     
     // Outlets
     @IBOutlet var headerView: UIView!
     @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet var upNextView: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
+   
+  
     @IBOutlet weak var nextItemDueDate: UILabel!
     @IBOutlet weak var nextItemText: UILabel!
-    @IBOutlet weak var redLine: UIView!
+  
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBAction func addItem(_ sender: Any) {
       
@@ -40,7 +39,22 @@ class AllListsViewController: UITableViewController {
     
     @IBOutlet weak var redLineWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextDueItemButton: UIButton!
+    
     @IBAction func nextDueItem(_ sender: Any) {
+     // button action to show next due item in headerview
+     print("tapge")
+        for checklist in dataModel.lists {
+            let items = checklist.items
+            for checklistitem in items {
+                if checklistitem == dataModel.nextDueItem().first {
+                    print("IT WORKED: \(checklistitem.dueDate)")
+                    performSegue(withIdentifier: "ShowChecklist", sender: checklist)
+                }
+            }
+        }
+        
+    
+        
         
     }
     
@@ -79,6 +93,9 @@ class AllListsViewController: UITableViewController {
          */
     }
     
+    // HELPERS
+
+    
     // HEADER
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -87,22 +104,36 @@ class AllListsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         headerView.layer.borderColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0).cgColor
+        
+      
         headerView.layer.borderWidth = 0.3
         headerLabel.text = "NExt Due"
         
-        dataModel.nextDueItem()
-
-        if dataModel.allItems.isEmpty {
+        if dataModel.nextDueItem().isEmpty {
             nextItemText.text = "Nothing Due!"
             nextItemDueDate.text = ""
             nextDueItemButton.isEnabled = false
-            
+          
         }else{
             let formatter = DateFormatter()
             formatter.dateStyle = .long
             formatter.timeStyle = .short
-            nextItemText.text = dataModel.allItems.first?.text
-            nextItemDueDate.text = formatter.string(from: (dataModel.allItems.first?.dueDate)!)
+            
+            let today = NSDate()
+            
+            if let dueItem = dataModel.nextDueItem().first {
+                
+                if dueItem.dueDate > today as Date {
+                    nextItemText.textColor = UIColor.red
+                }
+                
+                
+            }
+           
+            
+            nextItemText.text = dataModel.nextDueItem().first?.text
+            nextItemDueDate.text = formatter.string(from: (dataModel.nextDueItem().first?.dueDate)!)
+            
         }
         return headerView
     }
@@ -213,7 +244,7 @@ class AllListsViewController: UITableViewController {
         dataModel.lists.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
-        collectionView.reloadData()
+      
         
         
     }
@@ -236,9 +267,7 @@ class AllListsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-        dataModel.nextDueItem()
-        // collectionView.reloadData()
-        
+
         
     }
     
@@ -250,25 +279,7 @@ class AllListsViewController: UITableViewController {
             let checklist = dataModel.lists[index]
             performSegue(withIdentifier: "ShowChecklist", sender: checklist)
         }
-        /*
-         if redLineShowing {
-         
-         UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
-         self.redLine.backgroundColor = UIColor.red
-         self.redLineWidthConstraint.constant = self.headerView.frame.width / 3
-         self.headerView.layoutIfNeeded()
-         }, completion: nil)
-         
-         UIView.animate(withDuration: 0.5, delay: 1.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
-         
-         self.redLine.backgroundColor = UIColor.red
-         self.redLineWidthConstraint.constant = 0
-         self.headerView.layoutIfNeeded()
-         
-         }, completion: nil)
-         
-         }
-         */
+
     }
     
     

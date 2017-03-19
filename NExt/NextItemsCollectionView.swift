@@ -40,7 +40,7 @@ class NextItemCollectionView: UICollectionViewController {
         
         
         
-        let item = dataModel.allItems[indexPath.row]
+        let item = dataModel.nextDueItem()[indexPath.row]
         
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

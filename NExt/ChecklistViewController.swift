@@ -54,13 +54,15 @@ class ChecklistViewController: UITableViewController {
             }
         }
     }
+    
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
         //title = checklist.name
        captionViewColorView.alpha = 0.8
-       headerImageView.image = checklist.iconImage
-        headerImageView.contentMode = .scaleAspectFill
+     headerImageView.image = checklist.iconImage
+     headerImageView.contentMode = .scaleAspectFill
         
         
         
@@ -103,6 +105,9 @@ class ChecklistViewController: UITableViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     //MARK: TableView Data Source
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
@@ -129,7 +134,7 @@ class ChecklistViewController: UITableViewController {
     
     //MARK: TableView Delegate
     
-    
+
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
@@ -151,7 +156,7 @@ class ChecklistViewController: UITableViewController {
             
         }
         tableView.deselectRow(at: indexPath, animated: true)
-      
+   viewDidAppear(true)
       
     }
     

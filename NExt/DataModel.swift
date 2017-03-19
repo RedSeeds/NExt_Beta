@@ -11,28 +11,31 @@ import Foundation
 
 class DataModel {
     var lists = [Checklist]()
-    var allItems = [ChecklistItem]()
+    //var allItems = [ChecklistItem]()
     
     init() {
         loadChecklists()
         registerDefaults()
         handleFirstTime()
-        nextDueItem()
+        //nextDueItem()
     }
     
-    func nextDueItem() {
-        
+    
+    
+    
+    func nextDueItem() -> [ChecklistItem]{
+       var allitems = [ChecklistItem]()
         // sort items by due date
-      allItems.removeAll()
+     
         for list in lists {
             let items = list.items
             for item in items where item.checked == false {
-                allItems.append(item)
+                allitems.append(item)
             }
             
         }
         
-        allItems.sort { $0.dueDate < $1.dueDate }
+       return allitems.sorted { $0.dueDate < $1.dueDate }
         
     }
 
