@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import QuartzCore
 
 class ChecklistViewController: UITableViewController {
     
@@ -24,6 +24,7 @@ class ChecklistViewController: UITableViewController {
     @IBOutlet var header: UIView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var headerSubtitleLabel: UILabel!
+    @IBOutlet var gradiantView: GraphView!
     
     // button added to header as a UX prompt for thoese who cant see the + or unfamiliar with....duh
     @IBOutlet weak var headerAddButton: UIButton!
@@ -69,11 +70,13 @@ class ChecklistViewController: UITableViewController {
        captionViewColorView.alpha = 0.8
      headerImageView.image = checklist.iconImage
      headerImageView.contentMode = .scaleAspectFill
-        
+    
         
         
        
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -121,19 +124,41 @@ class ChecklistViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "ChecklistItem", for: indexPath)
+            withIdentifier: "ChecklistItem", for: indexPath) as! TableViewCellForGradiant
     
        checklist.items.sort(by: {$0.dueDate < $1.dueDate })
-        
-       
         
         let item = checklist.items[indexPath.row]
         configureText(for: cell, with: item)
         configureCheckmark(for: cell, with: item)
+       
         
+       
         return cell
         
       
+    }
+    
+    // MARK: - Table view delegate
+    
+    func colorForIndex(index: Int) -> UIColor {
+        let itemCount = checklist.items.count - 1
+      
+        let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
+        return UIColor(red: 25/255, green: val, blue: 0.0, alpha: 1.0)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = colorForIndex(index: indexPath.row)
+    }
+    
+
+    
+    // configure gradiant for cells which will aid in seperating cells vissually without having to us line seperators only
+    func configureTableViewGradiantCell(cell: UITableViewCell) {
+        
+        
+        
     }
     
     //MARK: TableView Delegate
@@ -146,8 +171,8 @@ class ChecklistViewController: UITableViewController {
             let item = checklist.items[indexPath.row]
      
             item.toggleChecked()
-            configureCheckmark(for: cell, with: item)
-            configureText(for: cell, with: item)
+            configureCheckmark(for: cell as! TableViewCellForGradiant, with: item)
+            configureText(for: cell as! TableViewCellForGradiant, with: item)
           
             
        
@@ -172,8 +197,7 @@ class ChecklistViewController: UITableViewController {
         // 2
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
-        
-        
+       
         
     }
     
@@ -190,68 +214,52 @@ class ChecklistViewController: UITableViewController {
 extension ChecklistViewController {
     // private methods
    
-    func configureCheckmark(for cell: UITableViewCell,
+    func configureCheckmark(for cell: TableViewCellForGradiant,
                             with item: ChecklistItem) {
         //let checkedImage = cell.viewWithTag(1) as! UIImageView
         
-       
-       
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
             let checkMarkLabel = cell.viewWithTag(2000) as! UILabel
             checkMarkLabel.textColor = UIColor.orange
 
             if item.checked {
-             checkMarkLabel.isHidden = false
+            cell.checkMark.isHidden = false
                 //checkedImage.isHidden = false
             } else {
-              checkMarkLabel.isHidden = true
+              cell.checkMark.isHidden = true
                 //checkedImage.isHidden = true
             }
-
-            
         }, completion: nil)
-        
     }
     
-    
-    func configureText(for cell: UITableViewCell,
+    func configureText(for cell: TableViewCellForGradiant,
                        with item: ChecklistItem) {
         
         let today = NSDate()
-        
-    
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .short
-        
-        
-        let label = cell.viewWithTag(1000) as! UILabel
-       let label2 = cell.viewWithTag(1001) as! UILabel
-        
-        
+       
+   
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
-            
-            
-            
+
             if item.dueDate < today as Date, !item.checked {
-                
-                label2.textColor = UIColor .red
+                cell.titleText.textColor = UIColor.red
             }
             
-            
             if item.checked {
-                label.alpha = 0.3
-                label2.alpha = 0.3
+                cell.titleText.alpha = 0.3
+                cell.dateLable.alpha = 0.3
             } else {
-                label.alpha = 1.0
-                label2.alpha = 1.0
+                cell.titleText.alpha = 1.0
+                cell.dateLable.alpha = 1.0
             }
             
             
         }, completion: nil)
         
-        label.text = item.text
-        label2.text = formatter.string(from: item.dueDate)
+        cell.titleText.text = item.text
+        cell.dateLable.text = formatter.string(from: item.dueDate)
              //  label.text = "\(item.itemID): \(item.text)"
     }
    
@@ -283,7 +291,7 @@ extension ChecklistViewController: ItemDetailViewControllerDelegate{
         if let index = checklist.items.index(of: item) {
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) {
-                configureText(for: cell, with: item)
+                configureText(for: cell as! TableViewCellForGradiant, with: item)
             }
         }
         dismiss(animated: true, completion: nil)

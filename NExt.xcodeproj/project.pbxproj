@@ -31,6 +31,7 @@
 		48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437A1E5EB7A900AD4F46 /* Star 22.png */; };
 		48B0437D1E5EB7B100AD4F46 /* Star large.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437C1E5EB7B100AD4F46 /* Star large.png */; };
 		48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4E1E712E1500965C26 /* IconCell.swift */; };
+		48D7317B1E81DA2200AE6344 /* TableViewCellForGradiant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7317A1E81DA2200AE6344 /* TableViewCellForGradiant.swift */; };
 		48D961BC1E7F97B300853CF9 /* Empty-Smilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D961BB1E7F97B300853CF9 /* Empty-Smilly.png */; };
 		48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA3C41E5B928500F470D7 /* DataModel.swift */; };
 		48E3084A1E7E4DEB00D792A7 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E308491E7E4DEB00D792A7 /* GraphView.swift */; };
@@ -84,6 +85,7 @@
 		48B0437A1E5EB7A900AD4F46 /* Star 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star 22.png"; sourceTree = "<group>"; };
 		48B0437C1E5EB7B100AD4F46 /* Star large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star large.png"; sourceTree = "<group>"; };
 		48CB0B4E1E712E1500965C26 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		48D7317A1E81DA2200AE6344 /* TableViewCellForGradiant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellForGradiant.swift; sourceTree = "<group>"; };
 		48D961BB1E7F97B300853CF9 /* Empty-Smilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Smilly.png"; sourceTree = "<group>"; };
 		48DCA3C41E5B928500F470D7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		48E308491E7E4DEB00D792A7 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				4854562E1E6BC99B003D6B58 /* StatView.swift */,
 				48B043761E5E5FF400AD4F46 /* ListCell.swift */,
 				48CB0B4E1E712E1500965C26 /* IconCell.swift */,
+				48D7317A1E81DA2200AE6344 /* TableViewCellForGradiant.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				483BD20F1E78F4AA00A05A85 /* AddToCodeSnipit.swift in Sources */,
 				48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */,
 				4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */,
+				48D7317B1E81DA2200AE6344 /* TableViewCellForGradiant.swift in Sources */,
 				489011D81E5A317700734682 /* ItemDetailViewController.swift in Sources */,
 				48E3084A1E7E4DEB00D792A7 /* GraphView.swift in Sources */,
 			);

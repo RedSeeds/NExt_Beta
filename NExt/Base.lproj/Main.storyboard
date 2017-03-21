@@ -21,7 +21,7 @@
                         <color key="separatorColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="ChecklistItem" rowHeight="56" id="zl6-LV-uln">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="ChecklistItem" rowHeight="56" id="zl6-LV-uln" customClass="TableViewCellForGradiant" customModule="NExt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zl6-LV-uln" id="GM2-g1-90F">
@@ -75,6 +75,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="checkMark" destination="DLb-Tq-dPm" id="U5J-n0-M0s"/>
+                                    <outlet property="dateLable" destination="tQT-yz-4ns" id="Bsc-rP-hq3"/>
+                                    <outlet property="titleText" destination="7F9-3c-Ew5" id="4aX-Qn-rLh"/>
                                     <segue destination="Jdb-eZ-F7a" kind="presentation" identifier="EditItem" trigger="accessoryAction" id="HSO-22-baS"/>
                                 </connections>
                             </tableViewCell>
@@ -94,6 +97,7 @@
                     <connections>
                         <outlet property="captionView" destination="ibG-o6-QER" id="Lud-h6-6U8"/>
                         <outlet property="captionViewColorView" destination="EnH-e0-dlm" id="N4Z-k5-KRw"/>
+                        <outlet property="gradiantView" destination="HG8-fd-7nh" id="EgF-9F-CEY"/>
                         <outlet property="header" destination="x9T-Up-WqO" id="bAa-Qf-EvS"/>
                         <outlet property="headerAddButton" destination="TnI-Os-aXF" id="wiY-At-oSF"/>
                         <outlet property="headerCell" destination="v1T-Fh-39F" id="Yz9-eV-7gL"/>
@@ -249,6 +253,11 @@
                         </constraints>
                     </tableViewCellContentView>
                 </tableViewCell>
+                <view contentMode="scaleToFill" id="HG8-fd-7nh" customClass="GraphView" customModule="NExt" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="780" y="-9.4452773613193415"/>
         </scene>
