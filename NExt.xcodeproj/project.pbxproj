@@ -21,14 +21,12 @@
 		489011B41E5A27B300734682 /* NExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011B31E5A27B300734682 /* NExtTests.swift */; };
 		489011BF1E5A27B300734682 /* NExtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011BE1E5A27B300734682 /* NExtUITests.swift */; };
 		489011D01E5A28B700734682 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011CF1E5A28B700734682 /* ChecklistViewController.swift */; };
-		489011D31E5A2A2300734682 /* ChecklistItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D21E5A2A2300734682 /* ChecklistItemCell.swift */; };
 		489011D51E5A2D3200734682 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D41E5A2D3200734682 /* ChecklistItem.swift */; };
 		489011D81E5A317700734682 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D71E5A317700734682 /* ItemDetailViewController.swift */; };
 		489011DA1E5A5B5900734682 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D91E5A5B5900734682 /* AllListsViewController.swift */; };
 		489011DC1E5A615200734682 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011DB1E5A615200734682 /* Checklist.swift */; };
 		489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011DD1E5A806700734682 /* ListDetailViewController.swift */; };
 		48B043771E5E5FF400AD4F46 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B043761E5E5FF400AD4F46 /* ListCell.swift */; };
-		48B043791E5EAE9500AD4F46 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */; };
 		48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437A1E5EB7A900AD4F46 /* Star 22.png */; };
 		48B0437D1E5EB7B100AD4F46 /* Star large.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437C1E5EB7B100AD4F46 /* Star large.png */; };
 		48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4E1E712E1500965C26 /* IconCell.swift */; };
@@ -75,14 +73,12 @@
 		489011BE1E5A27B300734682 /* NExtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NExtUITests.swift; sourceTree = "<group>"; };
 		489011C01E5A27B300734682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		489011CF1E5A28B700734682 /* ChecklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
-		489011D21E5A2A2300734682 /* ChecklistItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItemCell.swift; sourceTree = "<group>"; };
 		489011D41E5A2D3200734682 /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		489011D71E5A317700734682 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		489011D91E5A5B5900734682 /* AllListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		489011DB1E5A615200734682 /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		489011DD1E5A806700734682 /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		48B043761E5E5FF400AD4F46 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
-		48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 		48B0437A1E5EB7A900AD4F46 /* Star 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star 22.png"; sourceTree = "<group>"; };
 		48B0437C1E5EB7B100AD4F46 /* Star large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star large.png"; sourceTree = "<group>"; };
 		48CB0B4E1E712E1500965C26 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
@@ -198,9 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				4854562E1E6BC99B003D6B58 /* StatView.swift */,
-				489011D21E5A2A2300734682 /* ChecklistItemCell.swift */,
 				48B043761E5E5FF400AD4F46 /* ListCell.swift */,
-				48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */,
 				48CB0B4E1E712E1500965C26 /* IconCell.swift */,
 			);
 			name = Views;
@@ -385,8 +379,6 @@
 				483BD20F1E78F4AA00A05A85 /* AddToCodeSnipit.swift in Sources */,
 				48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */,
 				4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */,
-				48B043791E5EAE9500AD4F46 /* ListHeaderView.swift in Sources */,
-				489011D31E5A2A2300734682 /* ChecklistItemCell.swift in Sources */,
 				489011D81E5A317700734682 /* ItemDetailViewController.swift in Sources */,
 				48E3084A1E7E4DEB00D792A7 /* GraphView.swift in Sources */,
 			);
@@ -531,7 +523,7 @@
 		489011C41E5A27B300734682 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 25449H8S9A;
 				INFOPLIST_FILE = NExt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -546,7 +538,7 @@
 		489011C51E5A27B300734682 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 25449H8S9A;
 				INFOPLIST_FILE = NExt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;

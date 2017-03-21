@@ -17,7 +17,6 @@ protocol ButtonCellDelegate {
 class AllListsViewController: UITableViewController {
     
     // Variables
-    let transition = PopAnimator()
     var progressPercentage: CGFloat = 0
     var dataModel: DataModel!
     var allItems: [ChecklistItem] = []
