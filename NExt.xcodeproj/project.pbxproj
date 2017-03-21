@@ -12,6 +12,7 @@
 		4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854562E1E6BC99B003D6B58 /* StatView.swift */; };
 		485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */; };
 		485456341E6BCE0C003D6B58 /* SizingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456321E6BCE0C003D6B58 /* SizingLabel.swift */; };
+		487B71711E81B6F2003B19DC /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 487B71701E81B6F2003B19DC /* target.png */; };
 		488690741E5D62440074712F /* four_starts.png in Resources */ = {isa = PBXBuildFile; fileRef = 488690731E5D62440074712F /* four_starts.png */; };
 		488690761E5D6D1F0074712F /* Shack color.png in Resources */ = {isa = PBXBuildFile; fileRef = 488690751E5D6D1F0074712F /* Shack color.png */; };
 		4890119C1E5A27B300734682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890119B1E5A27B300734682 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		4854562E1E6BC99B003D6B58 /* StatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreesToRadians.swift; sourceTree = "<group>"; };
 		485456321E6BCE0C003D6B58 /* SizingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingLabel.swift; sourceTree = "<group>"; };
+		487B71701E81B6F2003B19DC /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
 		488690731E5D62440074712F /* four_starts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_starts.png; sourceTree = "<group>"; };
 		488690751E5D6D1F0074712F /* Shack color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shack color.png"; sourceTree = "<group>"; };
 		489011981E5A27B300734682 /* NExt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NExt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +215,7 @@
 		489011DF1E5A880600734682 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				487B71701E81B6F2003B19DC /* target.png */,
 				48D961BB1E7F97B300853CF9 /* Empty-Smilly.png */,
 				48B0437C1E5EB7B100AD4F46 /* Star large.png */,
 				48B0437A1E5EB7A900AD4F46 /* Star 22.png */,
@@ -337,6 +340,7 @@
 				48D961BC1E7F97B300853CF9 /* Empty-Smilly.png in Resources */,
 				489011A11E5A27B300734682 /* Main.storyboard in Resources */,
 				488690761E5D6D1F0074712F /* Shack color.png in Resources */,
+				487B71711E81B6F2003B19DC /* target.png in Resources */,
 				48B0437D1E5EB7B100AD4F46 /* Star large.png in Resources */,
 				48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */,
 				488690741E5D62440074712F /* four_starts.png in Resources */,

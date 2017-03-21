@@ -24,6 +24,7 @@ class IconPickerViewController: UICollectionViewController {
     
     let icons = [
         "Empty-Smilly",
+        "target.png",
         "Home",
         "Appointments",
         "Birthdays",
