@@ -25,6 +25,12 @@ class ChecklistViewController: UITableViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var headerSubtitleLabel: UILabel!
     
+    // button added to header as a UX prompt for thoese who cant see the + or unfamiliar with....duh
+    @IBOutlet weak var headerAddButton: UIButton!
+    @IBAction func addFromHeader(_ sender: Any) {
+        
+        performSegue(withIdentifier: "AddItem", sender: nil)
+    }
     
     @IBOutlet weak var headerImageView: UIImageView!
 
@@ -105,9 +111,7 @@ class ChecklistViewController: UITableViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
+    
     //MARK: TableView Data Source
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
@@ -156,7 +160,7 @@ class ChecklistViewController: UITableViewController {
             
         }
         tableView.deselectRow(at: indexPath, animated: true)
-   viewDidAppear(true)
+  
       
     }
     
@@ -213,7 +217,9 @@ extension ChecklistViewController {
     func configureText(for cell: UITableViewCell,
                        with item: ChecklistItem) {
         
+        let today = NSDate()
         
+    
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .short
@@ -221,7 +227,17 @@ extension ChecklistViewController {
         
         let label = cell.viewWithTag(1000) as! UILabel
        let label2 = cell.viewWithTag(1001) as! UILabel
+        
+        
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
+            
+            
+            
+            if item.dueDate < today as Date, !item.checked {
+                
+                label2.textColor = UIColor .red
+            }
+            
             
             if item.checked {
                 label.alpha = 0.3
@@ -236,8 +252,7 @@ extension ChecklistViewController {
         
         label.text = item.text
         label2.text = formatter.string(from: item.dueDate)
-        
-      //  label.text = "\(item.itemID): \(item.text)"
+             //  label.text = "\(item.itemID): \(item.text)"
     }
    
 

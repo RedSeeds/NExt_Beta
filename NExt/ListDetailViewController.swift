@@ -16,7 +16,6 @@ protocol ListDetailViewControllerDelegate: class {
                                   didFinishAdding checklist: Checklist)
     func listDetailViewController(_ controller: ListDetailViewController,
                                   didFinishEditing checklist: Checklist)
-    func listDetailViewController(_controller: ListDetailViewController, didFinishAddingPhoto: UIImage)
 }
 
 class ListDetailViewController: UITableViewController,
@@ -30,6 +29,8 @@ UITextFieldDelegate {
     var selectedIconImage: UIImageView?
     var defaultIconName = "Empty-Smilly"
     var selectedIconName = ""
+    var photoTaken = false
+    var photoSelected = false
     
 
     // test for animation of dials
@@ -46,6 +47,10 @@ UITextFieldDelegate {
     
     // Icon views and buttons contained within the animated views
     // top display for images picked as icon
+    
+    // used to animate the textField as textFields are not transformable
+    @IBOutlet weak var textFieldView: UIView!
+    
     
     @IBOutlet weak var topIconDiplayView: UIView!
     @IBOutlet weak var topIconDisplayViewYconstraint: NSLayoutConstraint!
@@ -207,15 +212,24 @@ UITextFieldDelegate {
         self.transformView(view: self.leftIconView, size: 0)
         self.transformView(view: self.rightIconView, size: 0)
         self.transformView(view: self.centerIconView, size: 0)
-       
-      
+       self.transformView(view: textFieldView, size: 0.2)
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+            
+                       self.textFieldView.transform = CGAffineTransform.identity
+            self.view.layoutIfNeeded()
+            
+            
+        }, completion: nil)
+        
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
             
             // animates imageviews upon appearing
             self.transformView(view: self.leftIconView, size: 1.3)
@@ -227,14 +241,16 @@ UITextFieldDelegate {
             
             self.centerIconBottom.constant = 150
             self.rightIconXConstraint.constant = self.topIconDiplayView.frame.height + 20
-            
-        
+          
+      
             self.view.layoutIfNeeded()
             
             
         }, completion: nil)
         
-        
+        if photoTaken {
+            wantToSave()
+        }
    
     }
     
@@ -278,6 +294,8 @@ extension ListDetailViewController: IconPickerViewControllerDelegate {
 extension ListDetailViewController: UIImagePickerControllerDelegate{
     
     func takePhoto() {
+        photoTaken = true
+        photoSelected = false
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
@@ -285,6 +303,10 @@ extension ListDetailViewController: UIImagePickerControllerDelegate{
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
+        
+        
+        }else{
+            NSLog("No Camera.")
         }
     }
     
@@ -296,12 +318,19 @@ extension ListDetailViewController: UIImagePickerControllerDelegate{
             
             // 2 place image in the image view as an icon image
             centerIconImageView.image = pickerImage
+            
            
         }
         picker.dismiss(animated: true, completion: nil )
+        
+     
+        print("camera used")
     }
     
     func pickPhoto() {
+        
+        photoTaken = false
+        photoSelected = true
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -311,22 +340,37 @@ extension ListDetailViewController: UIImagePickerControllerDelegate{
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-    
-    /*
+    func wantToSave() {
+        
+        let alert = UIAlertController(title: "Save", message: "Save to Photos?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action: UIAlertAction) in
+            self.savePhoto()
+            print("saved")
+        }
+        let cancelAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+  
      // uncomment to allow user to save photo. Disabled to save on memory storage
      func savePhoto() {
-     let imageData = UIImagePNGRepresentation(rightIconImageView.image!)
+       
+     let imageData = UIImagePNGRepresentation(centerIconImageView.image!)
      let compresedImage = UIImage(data: imageData!)
      UIImageWriteToSavedPhotosAlbum(compresedImage!, nil, nil, nil)
      
-     /* Un comment to push alert stating the photo has been saved
+     /*
+    // Un comment to push alert stating the photo has been saved
      let alert = UIAlertController(title: "Saved", message: "Your image has been saved", preferredStyle: .alert)
      let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
      alert.addAction(okAction)
      self.present(alert, animated: true, completion: nil)
-     */
-     }
-     */
+   */
+    }
+ 
 }
 
 extension ListDetailViewController: UINavigationControllerDelegate{

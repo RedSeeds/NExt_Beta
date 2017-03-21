@@ -17,6 +17,34 @@ class ListCell: UITableViewCell {
     @IBOutlet var itemImageView: UIImageView!
     @IBOutlet var text1: UILabel!
     @IBOutlet var text2: UILabel!
+    
+    func transformIn(delay:TimeInterval){
+        UIView.animate(withDuration: 0.5, delay: delay, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options:.curveEaseIn, animations: {
+            
+            self.statView.layer.cornerRadius = self.statView.frame.width / 2
+            self.statView.transform = CGAffineTransform.identity
+            
+        }, completion: nil )
+        statView.transform = CGAffineTransform.identity
+    }
+    
+    
+    var startSize: CGFloat? {
+        didSet{
+            if let startSize = startSize {
+                statView.transform = CGAffineTransform(scaleX: startSize, y: startSize)
+            }
+        }
+    }
+    
+    var endSize: CGFloat? {
+        didSet{
+            
+            if let endSize = endSize {
+                statView.transform = CGAffineTransform(scaleX: endSize, y: endSize)
+            }
+        }
+    }
    
     @IBOutlet weak var badgeView: UIView!
 

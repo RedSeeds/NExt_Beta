@@ -93,9 +93,12 @@ class StatView: UIView {
         let percentLabelCenterY = percentLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         NSLayoutConstraint.activate([percentLabelCenterX, percentLabelCenterY])
         
-       // let captionLabelCenterX = captionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-       // let captionLabelBottom = captionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-       // NSLayoutConstraint.activate([captionLabelCenterX, captionLabelBottom])
+        // uncomment to add caption lable to circular progression bar
+        /*
+       let captionLabelCenterX = captionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+       let captionLabelBottom = captionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+       NSLayoutConstraint.activate([captionLabelCenterX, captionLabelBottom])
+         */
     }
     
     func configure() {
@@ -137,7 +140,7 @@ class StatView: UIView {
         animation.toValue = toValue
         
         // 2
-        animation.duration = CFTimeInterval(percentChange * 4)
+        animation.duration = CFTimeInterval(percentChange * 2)
         
         // 3
         fgLayer.removeAnimation(forKey: "stroke")

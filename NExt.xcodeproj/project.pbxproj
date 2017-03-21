@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		480955AD1E6E89FB009F4D1A /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480955AC1E6E89FB009F4D1A /* PopAnimator.swift */; };
-		4829297B1E664ADF0086529A /* NextItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829297A1E664ADF0086529A /* NextItemsCollectionView.swift */; };
-		4829297D1E664E020086529A /* UpNextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829297C1E664E020086529A /* UpNextCell.swift */; };
 		48294BE81E5C13F0001F0AE9 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */; };
 		483BD20F1E78F4AA00A05A85 /* AddToCodeSnipit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483BD20E1E78F4AA00A05A85 /* AddToCodeSnipit.swift */; };
 		4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854562E1E6BC99B003D6B58 /* StatView.swift */; };
@@ -30,17 +27,14 @@
 		489011DA1E5A5B5900734682 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011D91E5A5B5900734682 /* AllListsViewController.swift */; };
 		489011DC1E5A615200734682 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011DB1E5A615200734682 /* Checklist.swift */; };
 		489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011DD1E5A806700734682 /* ListDetailViewController.swift */; };
-		489011E11E5A889B00734682 /* IOS camera icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 489011E01E5A889B00734682 /* IOS camera icon.png */; };
-		48AEA8531E63E4B600823B4B /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AEA8521E63E4B600823B4B /* TopTableViewCell.swift */; };
 		48B043771E5E5FF400AD4F46 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B043761E5E5FF400AD4F46 /* ListCell.swift */; };
 		48B043791E5EAE9500AD4F46 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */; };
 		48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437A1E5EB7A900AD4F46 /* Star 22.png */; };
 		48B0437D1E5EB7B100AD4F46 /* Star large.png in Resources */ = {isa = PBXBuildFile; fileRef = 48B0437C1E5EB7B100AD4F46 /* Star large.png */; };
-		48CB0B4D1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4C1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift */; };
 		48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4E1E712E1500965C26 /* IconCell.swift */; };
+		48D961BC1E7F97B300853CF9 /* Empty-Smilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D961BB1E7F97B300853CF9 /* Empty-Smilly.png */; };
 		48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA3C41E5B928500F470D7 /* DataModel.swift */; };
 		48E3084A1E7E4DEB00D792A7 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E308491E7E4DEB00D792A7 /* GraphView.swift */; };
-		48EE9A921E7A4606009DC0F5 /* Empty-Smilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 48EE9A911E7A4606009DC0F5 /* Empty-Smilly.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		480955AC1E6E89FB009F4D1A /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
-		4829297A1E664ADF0086529A /* NextItemsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextItemsCollectionView.swift; sourceTree = "<group>"; };
-		4829297C1E664E020086529A /* UpNextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpNextCell.swift; sourceTree = "<group>"; };
 		48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		483BD20E1E78F4AA00A05A85 /* AddToCodeSnipit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToCodeSnipit.swift; sourceTree = "<group>"; };
 		4854562E1E6BC99B003D6B58 /* StatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
@@ -90,17 +81,14 @@
 		489011D91E5A5B5900734682 /* AllListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		489011DB1E5A615200734682 /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		489011DD1E5A806700734682 /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
-		489011E01E5A889B00734682 /* IOS camera icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS camera icon.png"; sourceTree = "<group>"; };
-		48AEA8521E63E4B600823B4B /* TopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
 		48B043761E5E5FF400AD4F46 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 		48B0437A1E5EB7A900AD4F46 /* Star 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star 22.png"; sourceTree = "<group>"; };
 		48B0437C1E5EB7B100AD4F46 /* Star large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star large.png"; sourceTree = "<group>"; };
-		48CB0B4C1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureVIewControllerViewController.swift; sourceTree = "<group>"; };
 		48CB0B4E1E712E1500965C26 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		48D961BB1E7F97B300853CF9 /* Empty-Smilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Smilly.png"; sourceTree = "<group>"; };
 		48DCA3C41E5B928500F470D7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		48E308491E7E4DEB00D792A7 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
-		48EE9A911E7A4606009DC0F5 /* Empty-Smilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Smilly.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,13 +185,11 @@
 		489011CC1E5A282300734682 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4829297A1E664ADF0086529A /* NextItemsCollectionView.swift */,
 				489011CF1E5A28B700734682 /* ChecklistViewController.swift */,
 				489011D71E5A317700734682 /* ItemDetailViewController.swift */,
 				489011D91E5A5B5900734682 /* AllListsViewController.swift */,
 				489011DD1E5A806700734682 /* ListDetailViewController.swift */,
 				48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */,
-				48CB0B4C1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -215,8 +201,6 @@
 				489011D21E5A2A2300734682 /* ChecklistItemCell.swift */,
 				48B043761E5E5FF400AD4F46 /* ListCell.swift */,
 				48B043781E5EAE9500AD4F46 /* ListHeaderView.swift */,
-				48AEA8521E63E4B600823B4B /* TopTableViewCell.swift */,
-				4829297C1E664E020086529A /* UpNextCell.swift */,
 				48CB0B4E1E712E1500965C26 /* IconCell.swift */,
 			);
 			name = Views;
@@ -225,7 +209,6 @@
 		489011D61E5A2E9E00734682 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				480955AC1E6E89FB009F4D1A /* PopAnimator.swift */,
 				489011D41E5A2D3200734682 /* ChecklistItem.swift */,
 				489011DB1E5A615200734682 /* Checklist.swift */,
 				48DCA3C41E5B928500F470D7 /* DataModel.swift */,
@@ -236,12 +219,11 @@
 		489011DF1E5A880600734682 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				48EE9A911E7A4606009DC0F5 /* Empty-Smilly.png */,
+				48D961BB1E7F97B300853CF9 /* Empty-Smilly.png */,
 				48B0437C1E5EB7B100AD4F46 /* Star large.png */,
 				48B0437A1E5EB7A900AD4F46 /* Star 22.png */,
 				488690751E5D6D1F0074712F /* Shack color.png */,
 				488690731E5D62440074712F /* four_starts.png */,
-				489011E01E5A889B00734682 /* IOS camera icon.png */,
 			);
 			name = Images;
 			path = NExt;
@@ -358,11 +340,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				489011A61E5A27B300734682 /* Assets.xcassets in Resources */,
-				48EE9A921E7A4606009DC0F5 /* Empty-Smilly.png in Resources */,
+				48D961BC1E7F97B300853CF9 /* Empty-Smilly.png in Resources */,
 				489011A11E5A27B300734682 /* Main.storyboard in Resources */,
 				488690761E5D6D1F0074712F /* Shack color.png in Resources */,
 				48B0437D1E5EB7B100AD4F46 /* Star large.png in Resources */,
-				489011E11E5A889B00734682 /* IOS camera icon.png in Resources */,
 				48B0437B1E5EB7A900AD4F46 /* Star 22.png in Resources */,
 				488690741E5D62440074712F /* four_starts.png in Resources */,
 			);
@@ -389,11 +370,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4829297B1E664ADF0086529A /* NextItemsCollectionView.swift in Sources */,
 				4890119C1E5A27B300734682 /* AppDelegate.swift in Sources */,
 				489011DA1E5A5B5900734682 /* AllListsViewController.swift in Sources */,
 				485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */,
-				48CB0B4D1E70D50E00965C26 /* PhotoCaptureVIewControllerViewController.swift in Sources */,
 				489011D51E5A2D3200734682 /* ChecklistItem.swift in Sources */,
 				489011D01E5A28B700734682 /* ChecklistViewController.swift in Sources */,
 				489011DC1E5A615200734682 /* Checklist.swift in Sources */,
@@ -402,13 +381,10 @@
 				48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */,
 				489011A41E5A27B300734682 /* NExt.xcdatamodeld in Sources */,
 				489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */,
-				480955AD1E6E89FB009F4D1A /* PopAnimator.swift in Sources */,
 				48B043771E5E5FF400AD4F46 /* ListCell.swift in Sources */,
 				483BD20F1E78F4AA00A05A85 /* AddToCodeSnipit.swift in Sources */,
 				48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */,
 				4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */,
-				4829297D1E664E020086529A /* UpNextCell.swift in Sources */,
-				48AEA8531E63E4B600823B4B /* TopTableViewCell.swift in Sources */,
 				48B043791E5EAE9500AD4F46 /* ListHeaderView.swift in Sources */,
 				489011D31E5A2A2300734682 /* ChecklistItemCell.swift in Sources */,
 				489011D81E5A317700734682 /* ItemDetailViewController.swift in Sources */,
@@ -555,6 +531,7 @@
 		489011C41E5A27B300734682 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				DEVELOPMENT_TEAM = 25449H8S9A;
 				INFOPLIST_FILE = NExt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -562,12 +539,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.redseedapps.NExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		489011C51E5A27B300734682 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				DEVELOPMENT_TEAM = 25449H8S9A;
 				INFOPLIST_FILE = NExt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -575,6 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.redseedapps.NExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

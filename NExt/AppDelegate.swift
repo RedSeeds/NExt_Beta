@@ -29,11 +29,11 @@ let dataModel = DataModel()
         //navigationBarAppearace.tintColor = UIColor(red: 51, green: 51, blue: 51, alpha: 1.0)
         
       
-       navigationBarAppearace.barTintColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0)
+       navigationBarAppearace.barTintColor = UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 1.0)
         
-        let center = UNUserNotificationCenter.current()        
+        let center = UNUserNotificationCenter.current()
         center.delegate = self
-   
+        
         return true
     }
 
@@ -51,6 +51,10 @@ let dataModel = DataModel()
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        
+        
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

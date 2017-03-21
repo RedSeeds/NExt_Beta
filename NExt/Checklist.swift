@@ -21,7 +21,7 @@ class Checklist: NSObject, NSCoding {
     
     init(name: String, iconImage: UIImage) {
         self.name = name
-        self.iconImage = iconImage
+      self.iconImage = iconImage
  
         
         super.init()

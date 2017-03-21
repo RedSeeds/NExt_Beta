@@ -11,7 +11,7 @@ import Foundation
 
 class DataModel {
     var lists = [Checklist]()
-    //var allItems = [ChecklistItem]()
+    var allItems = [ChecklistItem]()
     
     init() {
         loadChecklists()

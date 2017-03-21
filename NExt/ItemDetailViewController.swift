@@ -30,6 +30,7 @@ class ItemDetailViewController: UITableViewController {
     
     // Outlets
     
+    @IBOutlet weak var textFieldView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var shouldRemindSwitch: UISwitch!
@@ -187,7 +188,36 @@ class ItemDetailViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         textField.becomeFirstResponder()
+        textFieldView.transform = CGAffineTransform(scaleX: 0, y: 0)
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+       
+        
+        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+            
+            self.textFieldView.transform = CGAffineTransform.identity
+            self.view.layoutIfNeeded()
+            
+            
+        }, completion: nil)
+        
+        
+        UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+            
+            // animates views upon appearing
+          
+            
+            
+            self.view.layoutIfNeeded()
+            
+            
+        }, completion: nil)
+
+    }
+    
+    
     
     override func tableView(_ tableView: UITableView,
                             willSelectRowAt indexPath: IndexPath) -> IndexPath? {
