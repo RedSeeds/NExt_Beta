@@ -14,6 +14,8 @@ class Checklist: NSObject, NSCoding {
     var name = ""
     var items = [ChecklistItem]()
     var iconImage = UIImage()
+    var itemsCompleted: Int = 0
+    //var itemIDs = [Int]()
     
     convenience init(name: String) {
         self.init(name: name, iconImage: UIImage(named: "Empty-Smilly")! )
@@ -31,6 +33,7 @@ class Checklist: NSObject, NSCoding {
         name = aDecoder.decodeObject(forKey: "Name") as! String
         items = aDecoder.decodeObject(forKey: "Items") as! [ChecklistItem]
         iconImage = aDecoder.decodeObject(forKey: "IconImage") as! UIImage
+       // itemsCompleted = aDecoder.decodeInteger(forKey: "ItemsCompleted") as! Int
         super.init()
     }
     
@@ -38,12 +41,30 @@ class Checklist: NSObject, NSCoding {
         aCoder.encode(name, forKey: "Name")
         aCoder.encode(items, forKey: "Items")
         aCoder.encode(iconImage, forKey: "IconImage")
+       // aCoder.encode(itemsCompleted, forKey: "ItemID")
     }
     
     // Class methods 
+    /*
+    func checklistItemIDs()  {
+        for item in items where item.checked {
+            if item.itemID ==
+            itemIDs.append(item.itemID)
+            itemsCompleted += 1
+        }
+    }
+    
+     */
+    
+    func numberOfCompletedItems() -> Int {
+        
+        for item in items where item.checked {
+            itemsCompleted += 1
+        }
+        return itemsCompleted
+    }
     
 
-    
     func countUncheckedItems() -> Int {
         var count = 0
         for item in items where !item.checked {

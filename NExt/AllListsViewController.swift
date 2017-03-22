@@ -93,12 +93,12 @@ class AllListsViewController: UITableViewController {
     // HELPERS
 
     
-    // HEADER, contains labels that display the next due item by date, also includes a button to segue to the next due item currently being displayed
+    // HEADER************, contains labels that display the next due item by date, also includes a button to segue to the next due item currently being displayed
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         // header is sized to occupy 10% of the view hight to account for multiple size devices. This is set this way due to the fact the header contains text that can be displayed on a larger scale. Labels are not currently set to increase with size as this version supports only iPhone
-        let height = self.view.frame.height / 10
-        return height
+       
+        return 100
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -107,7 +107,7 @@ class AllListsViewController: UITableViewController {
         headerView.layer.borderWidth = 0.3
         
        // 2 app title displayed in header
-        headerLabel.text = "NExt Due"
+        headerLabel.text = "Beta: NExt Due"
         
         // 3 first confirm there are checklistitems, if none then display below
         if dataModel.nextDueItem().isEmpty {
@@ -133,7 +133,7 @@ class AllListsViewController: UITableViewController {
             // asking the dataModel for the next due item located in the array contained on the DataModel
             if let dueItem = dataModel.nextDueItem().first {
                 if dueItem.dueDate < today as Date {
-                    nextItemText.textColor = UIColor.red
+                    nextItemDueDate.textColor = UIColor.red
                 }
             }
            
