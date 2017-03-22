@@ -24,7 +24,11 @@ class ChecklistViewController: UITableViewController {
     @IBOutlet var header: UIView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var headerSubtitleLabel: UILabel!
-    @IBOutlet var gradiantView: GraphView!
+
+    @IBOutlet weak var starLabel: UILabel!
+    
+    @IBOutlet weak var starLarge: UIImageView!
+    
     
     // button added to header as a UX prompt for thoese who cant see the + or unfamiliar with....duh
     @IBOutlet weak var headerAddButton: UIButton!
@@ -70,9 +74,7 @@ class ChecklistViewController: UITableViewController {
        captionViewColorView.alpha = 0.8
      headerImageView.image = checklist.iconImage
      headerImageView.contentMode = .scaleAspectFill
-    
-        
-        
+  
        
     }
     
@@ -95,6 +97,7 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       
        let borderColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0).cgColor
         headerImageView.layer.borderWidth = 0.3
         headerImageView.layer.borderColor = borderColor
@@ -109,8 +112,8 @@ class ChecklistViewController: UITableViewController {
             headerLabel.text = ("\(checklist.name)")
             headerSubtitleLabel.text = ""
         }
-        
-        return header
+        updateStarLabel()
+               return header
         
     }
     
@@ -140,19 +143,19 @@ class ChecklistViewController: UITableViewController {
     }
     
     // MARK: - Table view delegate
-    
+    /*
     func colorForIndex(index: Int) -> UIColor {
         let itemCount = checklist.items.count - 1
       
         let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
-        return UIColor(red: 25/255, green: val, blue: 0.0, alpha: 1.0)
+        return UIColor(red: val, green: val, blue: val, alpha: 1.0)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = colorForIndex(index: indexPath.row)
     }
     
-
+*/
     
     // configure gradiant for cells which will aid in seperating cells vissually without having to us line seperators only
     func configureTableViewGradiantCell(cell: UITableViewCell) {
@@ -163,7 +166,36 @@ class ChecklistViewController: UITableViewController {
     
     //MARK: TableView Delegate
     
+    func updateStarLabel() {
+        var count = 0
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: { 
+            
+            
+            self.starLarge.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+            
+            self.view.layoutIfNeeded()
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.3, delay: 0.1, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+            
+            
+            self.starLarge.transform = CGAffineTransform(scaleX: 1, y: 1)
+            
+            self.view.layoutIfNeeded()
+            
+        }, completion: nil)
+        
+        
+        
+        for item in checklist.items where item.checked {
+            count += 1
+        }
+        starLabel.text = String(count)
+        
 
+        
+    }
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
@@ -173,15 +205,9 @@ class ChecklistViewController: UITableViewController {
             item.toggleChecked()
             configureCheckmark(for: cell as! TableViewCellForGradiant, with: item)
             configureText(for: cell as! TableViewCellForGradiant, with: item)
-          
-            
-       
+            updateStarLabel()
             
             // Move the corresponding row in the table view to reflect this change
-            
-       
-        
- 
             
         }
         tableView.deselectRow(at: indexPath, animated: true)
@@ -244,7 +270,7 @@ extension ChecklistViewController {
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
 
             if item.dueDate < today as Date, !item.checked {
-                cell.titleText.textColor = UIColor.red
+                cell.dateLable.textColor = UIColor.red
             }
             
             if item.checked {
