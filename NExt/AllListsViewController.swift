@@ -30,6 +30,11 @@ class AllListsViewController: UITableViewController {
     @IBOutlet weak var nextItemText: UILabel!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var nextDueItemButton: UIButton!
+    @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var starLabel: UILabel!
+    var compeltedItems: Int = 0
+    
+    @IBOutlet weak var circleView: UIView!
     
     // button action to show next due item in headerview
     @IBAction func nextDueItem(_ sender: Any) {
@@ -77,6 +82,9 @@ class AllListsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // circle view: stress head
+        circleView.layer.cornerRadius = self.circleView.frame.width / 2
         // sets the barbuttonitem to an edit button, allowing user to delete and move cells
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
@@ -91,8 +99,40 @@ class AllListsViewController: UITableViewController {
     }
     
     // HELPERS
-
+// updates the star Image animation and label tex
     
+    func updateStarLabel() {
+
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+            
+            
+            self.circleView.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+            
+            self.view.layoutIfNeeded()
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.3, delay: 0.1, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+            
+            
+            self.circleView.transform = CGAffineTransform(scaleX: 1, y: 1)
+            
+            self.view.layoutIfNeeded()
+            
+        }, completion: nil)
+    
+        
+        starLabel.text = String(dataModel.totalCompleteItems())
+        /*
+        for checklist in dataModel.lists where checklist.items.count > 0 {
+        
+        for item in checklist.items where item.checked {
+            count += 1
+            
+        }
+        starLabel.text = String(count)
+        */
+    }
     // HEADER************, contains labels that display the next due item by date, also includes a button to segue to the next due item currently being displayed
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -293,7 +333,9 @@ class AllListsViewController: UITableViewController {
             let checklist = dataModel.lists[index]
             performSegue(withIdentifier: "ShowChecklist", sender: checklist)
         }
+        updateStarLabel()
     }
+    
 }
 
 extension AllListsViewController:ListDetailViewControllerDelegate {

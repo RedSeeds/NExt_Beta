@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		48294BE81E5C13F0001F0AE9 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */; };
 		483BD20F1E78F4AA00A05A85 /* AddToCodeSnipit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483BD20E1E78F4AA00A05A85 /* AddToCodeSnipit.swift */; };
+		484F05101E83715B00C84320 /* StressHeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F050F1E83715B00C84320 /* StressHeadViewController.swift */; };
+		484F05181E83885F00C84320 /* Bamboo Breakout in Resources */ = {isa = PBXBuildFile; fileRef = 484F05171E83885F00C84320 /* Bamboo Breakout */; };
+		484F051C1E838B0200C84320 /* MoodVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F051B1E838B0200C84320 /* MoodVIewController.swift */; };
 		4854562F1E6BC99B003D6B58 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854562E1E6BC99B003D6B58 /* StatView.swift */; };
 		485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */; };
 		485456341E6BCE0C003D6B58 /* SizingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485456321E6BCE0C003D6B58 /* SizingLabel.swift */; };
@@ -57,6 +60,9 @@
 /* Begin PBXFileReference section */
 		48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		483BD20E1E78F4AA00A05A85 /* AddToCodeSnipit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToCodeSnipit.swift; sourceTree = "<group>"; };
+		484F050F1E83715B00C84320 /* StressHeadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StressHeadViewController.swift; sourceTree = "<group>"; };
+		484F05171E83885F00C84320 /* Bamboo Breakout */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bamboo Breakout"; sourceTree = "<group>"; };
+		484F051B1E838B0200C84320 /* MoodVIewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodVIewController.swift; sourceTree = "<group>"; };
 		4854562E1E6BC99B003D6B58 /* StatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		485456311E6BCE0C003D6B58 /* DegreesToRadians.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreesToRadians.swift; sourceTree = "<group>"; };
 		485456321E6BCE0C003D6B58 /* SizingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingLabel.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 		4890119A1E5A27B300734682 /* NExt */ = {
 			isa = PBXGroup;
 			children = (
+				484F05171E83885F00C84320 /* Bamboo Breakout */,
 				485456301E6BCDFE003D6B58 /* Helpers */,
 				4890119B1E5A27B300734682 /* AppDelegate.swift */,
 				4890119F1E5A27B300734682 /* Main.storyboard */,
@@ -190,6 +197,8 @@
 				489011D91E5A5B5900734682 /* AllListsViewController.swift */,
 				489011DD1E5A806700734682 /* ListDetailViewController.swift */,
 				48294BE71E5C13F0001F0AE9 /* IconPickerViewController.swift */,
+				484F050F1E83715B00C84320 /* StressHeadViewController.swift */,
+				484F051B1E838B0200C84320 /* MoodVIewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 			files = (
 				489011A61E5A27B300734682 /* Assets.xcassets in Resources */,
 				48D961BC1E7F97B300853CF9 /* Empty-Smilly.png in Resources */,
+				484F05181E83885F00C84320 /* Bamboo Breakout in Resources */,
 				489011A11E5A27B300734682 /* Main.storyboard in Resources */,
 				488690761E5D6D1F0074712F /* Shack color.png in Resources */,
 				487B71711E81B6F2003B19DC /* target.png in Resources */,
@@ -372,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4890119C1E5A27B300734682 /* AppDelegate.swift in Sources */,
+				484F051C1E838B0200C84320 /* MoodVIewController.swift in Sources */,
 				489011DA1E5A5B5900734682 /* AllListsViewController.swift in Sources */,
 				485456331E6BCE0C003D6B58 /* DegreesToRadians.swift in Sources */,
 				489011D51E5A2D3200734682 /* ChecklistItem.swift in Sources */,
@@ -379,6 +390,7 @@
 				489011DC1E5A615200734682 /* Checklist.swift in Sources */,
 				485456341E6BCE0C003D6B58 /* SizingLabel.swift in Sources */,
 				48294BE81E5C13F0001F0AE9 /* IconPickerViewController.swift in Sources */,
+				484F05101E83715B00C84320 /* StressHeadViewController.swift in Sources */,
 				48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */,
 				489011A41E5A27B300734682 /* NExt.xcdatamodeld in Sources */,
 				489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */,
