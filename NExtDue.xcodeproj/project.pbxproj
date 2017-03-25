@@ -25,10 +25,6 @@
 		489011DC1E5A615200734682 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011DB1E5A615200734682 /* Checklist.swift */; };
 		489011DE1E5A806700734682 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489011DD1E5A806700734682 /* ListDetailViewController.swift */; };
 		48B043771E5E5FF400AD4F46 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B043761E5E5FF400AD4F46 /* ListCell.swift */; };
-		48C720EE1E8628F100837890 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 48C720ED1E8628F100837890 /* target.png */; };
-		48C720F01E8628FB00837890 /* Star large.png in Resources */ = {isa = PBXBuildFile; fileRef = 48C720EF1E8628FB00837890 /* Star large.png */; };
-		48C720F21E86290900837890 /* Shack color.png in Resources */ = {isa = PBXBuildFile; fileRef = 48C720F11E86290900837890 /* Shack color.png */; };
-		48C720F41E86291200837890 /* Empty-Smilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 48C720F31E86291200837890 /* Empty-Smilly.png */; };
 		48CB0B4F1E712E1500965C26 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB0B4E1E712E1500965C26 /* IconCell.swift */; };
 		48D7317B1E81DA2200AE6344 /* TableViewCellForGradiant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7317A1E81DA2200AE6344 /* TableViewCellForGradiant.swift */; };
 		48DCA3C51E5B928500F470D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA3C41E5B928500F470D7 /* DataModel.swift */; };
@@ -77,10 +73,6 @@
 		489011DB1E5A615200734682 /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		489011DD1E5A806700734682 /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		48B043761E5E5FF400AD4F46 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
-		48C720ED1E8628F100837890 /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = target.png; path = "../../../../PNG Images/target.png"; sourceTree = "<group>"; };
-		48C720EF1E8628FB00837890 /* Star large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Star large.png"; path = "../../../../PNG Images/Star large.png"; sourceTree = "<group>"; };
-		48C720F11E86290900837890 /* Shack color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Shack color.png"; path = "../../../../PNG Images/Shack color.png"; sourceTree = "<group>"; };
-		48C720F31E86291200837890 /* Empty-Smilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Empty-Smilly.png"; path = "../../../../PNG Images/Empty-Smilly.png"; sourceTree = "<group>"; };
 		48CB0B4E1E712E1500965C26 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		48D7317A1E81DA2200AE6344 /* TableViewCellForGradiant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellForGradiant.swift; sourceTree = "<group>"; };
 		48DCA3C41E5B928500F470D7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -215,10 +207,6 @@
 		489011DF1E5A880600734682 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				48C720F31E86291200837890 /* Empty-Smilly.png */,
-				48C720F11E86290900837890 /* Shack color.png */,
-				48C720EF1E8628FB00837890 /* Star large.png */,
-				48C720ED1E8628F100837890 /* target.png */,
 			);
 			name = Images;
 			path = NExt;
@@ -336,10 +324,6 @@
 			files = (
 				489011A61E5A27B300734682 /* Assets.xcassets in Resources */,
 				489011A11E5A27B300734682 /* Main.storyboard in Resources */,
-				48C720F21E86290900837890 /* Shack color.png in Resources */,
-				48C720F01E8628FB00837890 /* Star large.png in Resources */,
-				48C720EE1E8628F100837890 /* target.png in Resources */,
-				48C720F41E86291200837890 /* Empty-Smilly.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +513,7 @@
 				INFOPLIST_FILE = NExtDue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.redseedapps.NExtDue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.redseedsapps.NexDue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -544,7 +528,7 @@
 				INFOPLIST_FILE = NExtDue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.redseedapps.NExtDue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.redseedsapps.NexDue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

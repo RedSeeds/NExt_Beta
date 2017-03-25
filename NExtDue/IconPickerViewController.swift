@@ -26,13 +26,16 @@ class IconPickerViewController: UICollectionViewController {
         "Empty-Smilly",
         "target.png",
         "Home",
+        "cabinClose split color",
         "Appointments",
         "Birthdays",
         "Chores",
+        "VolksWagonWithNurs",
         "Drinks",
         "Folder",
         "Groceries",
         "Inbox",
+        "walkers",
         "Photos",
         "Trips" ]
     
