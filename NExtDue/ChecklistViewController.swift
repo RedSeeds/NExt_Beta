@@ -16,31 +16,17 @@ class ChecklistViewController: UITableViewController {
     var checklist: Checklist!
     
     // Outlets
-    @IBOutlet var headerCell: UITableViewCell!
- 
-    @IBOutlet weak var captionView: UIView!
-    @IBOutlet weak var captionViewColorView: UIImageView!
-    @IBOutlet weak var itemImage: UIImageView!
+   
     @IBOutlet var header: UIView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var headerSubtitleLabel: UILabel!
-
     @IBOutlet weak var starLabel: UILabel!
-    
     @IBOutlet weak var starLarge: UIImageView!
     
-    
     // button added to header as a UX prompt for thoese who cant see the + or unfamiliar with....duh
-    @IBOutlet weak var headerAddButton: UIButton!
-    @IBAction func addFromHeader(_ sender: Any) {
-        
-        performSegue(withIdentifier: "AddItem", sender: nil)
-    }
-    
     @IBOutlet weak var headerImageView: UIImageView!
 
     // Segues
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // 1
         if segue.identifier == "AddItem" {
@@ -66,20 +52,14 @@ class ChecklistViewController: UITableViewController {
         }
     }
     
-    
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         //title = checklist.name
-       captionViewColorView.alpha = 0.8
+       
      headerImageView.image = checklist.iconImage
      headerImageView.contentMode = .scaleAspectFill
-  
-       
     }
-    
-    
-    
+  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -112,11 +92,10 @@ class ChecklistViewController: UITableViewController {
             headerLabel.text = ("\(checklist.name)")
             headerSubtitleLabel.text = ""
         }
-        updateStarLabel()
+       // uncomment to use star updated  updateStarLabel()
                return header
         
     }
-    
     
     //MARK: TableView Data Source
     override func tableView(_ tableView: UITableView,
@@ -133,13 +112,9 @@ class ChecklistViewController: UITableViewController {
         
         let item = checklist.items[indexPath.row]
         configureText(for: cell, with: item)
-        configureCheckmark(for: cell, with: item)
-       
+        //configureCheckmark(for: cell, with: item)
         
-       
         return cell
-        
-      
     }
     
     // MARK: - Table view delegate
@@ -160,48 +135,41 @@ class ChecklistViewController: UITableViewController {
     // configure gradiant for cells which will aid in seperating cells vissually without having to us line seperators only
     
     //MARK: TableView Delegate
-    
+    // uncomment to use the star view to collect and update number of task completed. Will be part of the update enchanments
+    /*
     func updateStarLabel() {
         var count = 0
-        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: { 
-            
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
             
             self.starLarge.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-            
             self.view.layoutIfNeeded()
             
         }, completion: nil)
         
         UIView.animate(withDuration: 0.3, delay: 0.1, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
             
-            
             self.starLarge.transform = CGAffineTransform(scaleX: 1, y: 1)
-            
             self.view.layoutIfNeeded()
             
         }, completion: nil)
-        
-        
         
         for item in checklist.items where item.checked {
             count += 1
         }
         starLabel.text = String(count)
         
-
-        
     }
-
+*/
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             let item = checklist.items[indexPath.row]
      
             item.toggleChecked()
-            configureCheckmark(for: cell as! TableViewCellForGradiant, with: item)
+           configureCheckmark(for: cell as! TableViewCellForGradiant, with: item)
             configureText(for: cell as! TableViewCellForGradiant, with: item)
-            updateStarLabel()
             
+          
             // Move the corresponding row in the table view to reflect this change
             
         }
@@ -237,11 +205,11 @@ extension ChecklistViewController {
    
     func configureCheckmark(for cell: TableViewCellForGradiant,
                             with item: ChecklistItem) {
-        //let checkedImage = cell.viewWithTag(1) as! UIImageView
+    
         
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
-            let checkMarkLabel = cell.viewWithTag(2000) as! UILabel
-            checkMarkLabel.textColor = UIColor.orange
+           
+            cell.checkMark.textColor = UIColor.orange
 
             if item.checked {
             cell.checkMark.isHidden = false
@@ -264,7 +232,7 @@ extension ChecklistViewController {
    
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
 
-            if item.dueDate < today as Date, !item.checked {
+            if item.dueDate <= today as Date + 1 && !item.checked {
                 cell.dateLable.textColor = UIColor.red
             }
             
@@ -276,17 +244,13 @@ extension ChecklistViewController {
                 cell.dateLable.alpha = 1.0
             }
             
-            
         }, completion: nil)
         
         cell.titleText.text = item.text
         cell.dateLable.text = formatter.string(from: item.dueDate)
              //  label.text = "\(item.itemID): \(item.text)"
     }
-   
-
-    
-    
+     
 }
 
 // Delegate methods that pass the new or edited Check list item, back to the Checklist View Contorller
@@ -313,6 +277,7 @@ extension ChecklistViewController: ItemDetailViewControllerDelegate{
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) {
                 configureText(for: cell as! TableViewCellForGradiant, with: item)
+            
             }
         }
         dismiss(animated: true, completion: nil)

@@ -19,9 +19,9 @@
     // Variables
     var dataModel: DataModel!
     var listCount = 0
-      var compeltedItems: Int = 0
+    var compeltedItems: Int = 0
     var indexOfIemEdited: Int?
-
+    
     
     // Outlets
     @IBOutlet var headerView: UIView!
@@ -88,6 +88,7 @@
         
         // circle view: stress head
         circleView.layer.cornerRadius = self.circleView.frame.width / 2
+        
         // sets the barbuttonitem to an edit button, allowing user to delete and move cells
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
@@ -104,6 +105,8 @@
     // HELPERS
     // updates the star Image animation and label tex
     
+    // umcomment to use the starlable for progress indecator (game-a-phy) item
+    /*
     func updateStarLabel() {
         
         UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
@@ -126,7 +129,7 @@
         
         
         starLabel.text = String(dataModel.totalCompleteItems())
-        /*
+    
          for checklist in dataModel.lists where checklist.items.count > 0 {
          
          for item in checklist.items where item.checked {
@@ -134,8 +137,10 @@
          
          }
          starLabel.text = String(count)
-         */
+  
     }
+     */
+    
     // HEADER************, contains labels that display the next due item by date, also includes a button to segue to the next due item currently being displayed
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -146,11 +151,11 @@
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // 1 header border set for estedics, and design
-        headerView.layer.borderColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0).cgColor
-        headerView.layer.borderWidth = 0.3
+            headerView.layer.borderColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0).cgColor
+            headerView.layer.borderWidth = 0.3
         
         // 2 app title displayed in header
-        headerLabel.text = "NExt Due"
+            headerLabel.text = "NExt Due"
         
         // 3 first confirm there are checklistitems, if none then display below
         if dataModel.nextDueItem().isEmpty {
@@ -163,26 +168,7 @@
             
             // if items exist then the checklist item name and due date will be displayed
         }else{
-            let formatter = DateFormatter()
-            formatter.dateStyle = .long
-            formatter.timeStyle = .short
-            
-            // create todays date to compare to the due date in order to change the color of text on items that are past due
-            let today = NSDate()
-            
-            // enable button for segue to next due item
-            nextDueItemButton.isEnabled = true
-            
-            // asking the dataModel for the next due item located in the array contained on the DataModel
-            if let dueItem = dataModel.nextDueItem().first {
-                if dueItem.dueDate < today as Date {
-                    nextItemDueDate.textColor = UIColor.red
-                }
-            }
-            
-            // displaying item per the above comments
-            nextItemText.text = dataModel.nextDueItem().first?.text
-            nextItemDueDate.text = formatter.string(from: (dataModel.nextDueItem().first?.dueDate)!)
+            configureNextDueText()
         }
         return headerView
     }
@@ -191,7 +177,34 @@
         return dataModel.lists.count
     }
     
-    
+
+    func configureNextDueText() {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        
+        // create todays date to compare to the due date in order to change the color of text on items that are past due
+        let today = NSDate()
+        
+        // enable button for segue to next due item
+        nextDueItemButton.isEnabled = true
+        
+        // asking the dataModel for the next due item located in the array contained on the DataModel
+        if let dueItem = dataModel.nextDueItem().first {
+            if dueItem.dueDate < today as Date {
+                nextItemDueDate.textColor = UIColor.red
+            }
+        }
+        
+        // displaying item per the above comments
+        nextItemText.text = dataModel.nextDueItem().first?.text
+        let dates = dataModel.nextDueItem().first?.dueDate
+
+       nextItemDueDate.text = formatter.string(from: dates!)
+        
+    }
+
     func configureBadge(cell: ListCell, view: UIView){
         
         // set and animate badge located on checklist icons image, indecating the number of past due items that are unchecked
@@ -271,10 +284,7 @@
             cell.text2.text = "\(checklist.countUncheckedItems()) Remaining"
         }
         
-        
         // sets transform on the new created item for vissual refrence for UX by transform 1.1 then down to 1
-        
-        
         if tableView.isEditing == false {
             
             if let indexOfIemEdited = indexOfIemEdited {
@@ -286,22 +296,13 @@
                 
             }else {
                 
-                
                 if dataModel.lists.count > 0 && dataModel.lists.count != listCount {
                     if indexPath.row == 0 {
                         cell.statViewBounce()
                     }
                 }
-                
-                
-                
             }
-            
-       
-            
         }
-        
-     
         
         // set badgeview size
         cell.badgeViewYContraint.constant = -cell.statView.frame.height / 2 + cell.badgeView.frame.height / 2
@@ -332,9 +333,23 @@
     override func tableView(_ tableView: UITableView,
                             commit editingStyle: UITableViewCellEditingStyle,
                             forRowAt indexPath: IndexPath) {
+        
         dataModel.lists.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+        
+        // changes label text in the header to address deleted checklist taking place without calling view did appear. User deletes items and the lable will update
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: { 
+            
+            if self.dataModel.nextDueItem().isEmpty {
+               self.nextItemDueDate.text = ""
+                self.nextItemText.text = "Nothing!"
+            }
+            
+        }, completion: nil)
+      
+       
+   
     }
     
     // accessory view navigates to the ListDetailViewController
@@ -353,7 +368,7 @@
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      
+        
         tableView.reloadData()
     }
     
@@ -369,8 +384,10 @@
             let checklist = dataModel.lists[index]
             performSegue(withIdentifier: "ShowChecklist", sender: checklist)
         }
+        /*
+        // uncomment when using star label
         updateStarLabel()
-        
+        */
         
     }
     
@@ -391,12 +408,7 @@
          dataModel.lists.append(checklist)
          dataModel.sortChecklists()
          */
-        
-        
-        
-        
-        
-        
+
         tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }
@@ -407,7 +419,7 @@
         indexOfIemEdited = dataModel.lists.index(of: checklist)!
         
         tableView.reloadData()
-        
+        configureNextDueText()
         dismiss(animated: true, completion: nil)
     }
  }
